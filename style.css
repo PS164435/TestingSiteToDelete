@@ -58,7 +58,7 @@ body {
   border-radius: 0px;
   transition: transform 0.2s;
   display: block;
-  margin-bottom: 20 auto;
+  margin-bottom: 20px;
 }
 
 .square:hover {
