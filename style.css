@@ -1,36 +1,55 @@
 body {
-  font-family: sans-serif;
-  text-align: center;
-  background-color: #f0f0f0;
   margin: 0;
-  padding: 2em;
+  font-family: sans-serif;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
 }
 
-h1 {
-  margin-bottom: 2em;
+.logo img {
+  max-width: 400px;
+  margin-top: 20px;
 }
 
-.container {
+.section {
+  margin-top: 40px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.attack {
+  background-color: #2196F3;
+}
+
+.defense {
+  background-color: #FF9800;
+}
+
+.grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  padding: 20px;
 }
 
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 2em;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background-color 0.3s;
+.square {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #888;
+  border-radius: 4px;
+  display: inline-block;
+  transition: transform 0.2s;
 }
 
-.box:hover {
-  background-color: #388E3C;
+.square:hover {
+  transform: scale(1.1);
 }
