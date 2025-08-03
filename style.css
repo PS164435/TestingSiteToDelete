@@ -54,7 +54,7 @@ body {
 .square {
   width: 130px;
   height: 130px;
-  border: 0px solid #888;
+  border: 1px solid #888;
   border-radius: 0px;
   transition: transform 0.2s;
   display: block;
