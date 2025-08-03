@@ -6,7 +6,38 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <h1>To jest strona 2</h1>
   <p><a href="index.html">Powrót</a></p>
+
+  <div class="grid">
+    <div class="column">
+      <h3>Primary Weapon</h3>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+    </div>
+
+    <div class="column">
+      <h3>Secondary Weapon</h3>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+    </div>
+
+    <div class="column">
+      <h3>Gadget</h3>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+      <div class="slot" onclick="openSelector(this)"></div>
+    </div>
+  </div>
+
+  <div id="image-selector" class="hidden">
+    <img src="ac6014ba-03c4-4f98-b3b1-ec7694802752.png" onclick="selectImage(this)">
+    <!-- Dodaj więcej <img src="..." onclick="selectImage(this)"> jeśli masz więcej obrazków -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
