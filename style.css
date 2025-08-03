@@ -23,8 +23,9 @@ body {
 }
 
 .section {
-  max-width: 400px;
   margin: 20px;
+  width: 100%;
+  max-width: none;
 }
 
 .title {
