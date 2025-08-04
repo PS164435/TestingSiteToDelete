@@ -7,47 +7,33 @@
 </head>
 <body>
 
-  <h1>To jest strona 2</h1>
-  <p><a href="index.html">Powrót</a></p>
-
-  ///
-  <style>
-    img {
-      max-width: 300px;
-      margin-top: 20px;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <label for="obrazek">Wybierz obrazek:</label>
-  <select id="obrazek" onchange="pokazObrazek()">
-    <option value="">-- wybierz --</option>
-    <option value="pies.jpg">Pies</option>
-    <option value="kot.jpg">Kot</option>
-    <option value="ptak.jpg">Ptak</option>
+  <p><a href="index.html">BACK</a></p>
+  
+  <select id="primaryWeapon" onchange="selectPrimaryWeapons()">
+    <option value=""> --------- </option>
+    <option value="Icons/Solis.png">Solis</option>
+    <option value="Icons/Deimos.png">Deimos</option>
+    <option value="Icons/Rauora.png">Rauora</option>
   </select>
 
   <div>
-    <img id="podglad" src="" alt="Wybrany obrazek">
+    <img id="weaponBlueprint" src="" alt="Primary Weapon Option 1">
   </div>
 
   <script>
-    function pokazObrazek() {
-      const select = document.getElementById('obrazek');
-      const img = document.getElementById('podglad');
-      const wybrany = select.value;
+    function selectPrimaryWeapons() {
+      const select = document.getElementById('primaryWeapon');
+      const img = document.getElementById('weaponBlueprint');
+      const chosen = select.value;
 
       if (wybrany) {
-        img.src = wybrany;
+        img.src = chosen;
         img.style.display = 'block';
       } else {
         img.style.display = 'none';
       }
     }
   </script>
-  ///
 
   <script src="script.js"></script>
 </body>
