@@ -10,36 +10,44 @@
   <h1>To jest strona 2</h1>
   <p><a href="index.html">Powrót</a></p>
 
-  <div class="grid">
-    <div class="column">
-      <h3>Primary Weapon</h3>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-    </div>
+  ///
+  <style>
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
 
-    <div class="column">
-      <h3>Secondary Weapon</h3>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-    </div>
+  <label for="obrazek">Wybierz obrazek:</label>
+  <select id="obrazek" onchange="pokazObrazek()">
+    <option value="">-- wybierz --</option>
+    <option value="pies.jpg">Pies</option>
+    <option value="kot.jpg">Kot</option>
+    <option value="ptak.jpg">Ptak</option>
+  </select>
 
-    <div class="column">
-      <h3>Gadget</h3>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-      <div class="slot" onclick="openSelector(this)"></div>
-    </div>
+  <div>
+    <img id="podglad" src="" alt="Wybrany obrazek">
   </div>
 
-  <div id="image-selector" class="hidden">
-      <img src="Icons/Rauora.png" onclick="selectImage(this)">
-      <img src="Icons/Deimos.png" onclick="selectImage(this)">
-      <img src="Icons/Mozzie.png" onclick="selectImage(this)">
-      <img src="Icons/Solis.png" onclick="selectImage(this)">
-      <img src="Icons/Mozzie.png" onclick="selectImage(this)">
-  </div>
+  <script>
+    function pokazObrazek() {
+      const select = document.getElementById('obrazek');
+      const img = document.getElementById('podglad');
+      const wybrany = select.value;
+
+      if (wybrany) {
+        img.src = wybrany;
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    }
+  </script>
+  ///
 
   <script src="script.js"></script>
 </body>
