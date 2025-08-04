@@ -19,16 +19,23 @@
       align-items: center;
       border: 1px solid yellow;
       width: 100%;
+      position: relative;
+    }
+    select.weapon-select {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
     }
     img {
       max-height: 180px;
       width: 94%;
       height: auto;
       margin: 0px;
-      display: none;
+      display: block;
       border: 1px solid #b0bac6;
       background-color: #090f19;
       object-fit: contain;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -147,7 +154,7 @@
 
   <script>
   const options = [
-    { name: 'gun2', value: 'Weapons/Empty.png' },
+    { name: 'Empty', value: 'Weapons/Empty.png' },
     { name: 'Solis', value: 'Icons/Solis.png' },
     { name: 'Deimos', value: 'Icons/Deimos.png' },
     { name: 'Rauora', value: 'Icons/Rauora.png' },
@@ -157,7 +164,16 @@
 
   const defaultImage = 'Weapons/Empty.png';
     
-  document.querySelectorAll('select.weapon-select').forEach(select => {
+  document.querySelectorAll('.grid-triple').forEach(container => {
+    const select = container.querySelector('select.weapon-select');
+    const img = container.querySelector('img');
+
+    if (!select || !img) return;
+
+    // Ustaw domyślny obrazek na starcie
+    img.src = defaultImage;
+
+    // Wypełnij select
     const emptyOption = document.createElement('option');
     emptyOption.textContent = ' --------- ';
     emptyOption.value = '';
@@ -169,18 +185,27 @@
       option.value = opt.value;
       select.appendChild(option);
     });
-  });
 
-  function selectWeapons(selectElement) {
-    const img = selectElement.nextElementSibling;
-    const chosen = selectElement.value;
-    if (chosen) {
-      img.src = chosen;
-      img.style.display = 'block';
-    } else {
-      img.style.display = 'none';
-    }
-  }
+    // Kliknięcie w obrazek = otwarcie selecta
+    img.addEventListener('click', () => {
+      select.style.pointerEvents = 'auto'; // włącz
+      select.focus();
+      select.click(); // otwórz listę
+      setTimeout(() => {
+        select.style.pointerEvents = 'none'; // wyłącz z powrotem
+      }, 500);
+    });
+
+    // Zmiana w select = zmiana obrazka
+    select.addEventListener('change', () => {
+      const chosen = select.value;
+      if (chosen) {
+        img.src = chosen;
+      } else {
+        img.src = defaultImage;
+      }
+    });
+  });
 </script>
 
 
