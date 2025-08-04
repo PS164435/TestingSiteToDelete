@@ -27,6 +27,7 @@ body {
   flex-wrap: wrap;
   margin: 0% 5%;
   border: 3px solid white;
+  padding: 0px;
 }
 
 .section-dual {
