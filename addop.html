@@ -4,68 +4,129 @@
   <meta charset="UTF-8">
   <title>Operator Sheet</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .grid-triple {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-    .select-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    img {
-      max-width: 100px;
-      margin-top: 10px;
-      display: none;
-    }
-  </style>
 </head>
 <body>
 
   <p><a href="index.html">BACK</a></p>
-
+  
   <div class="triple-container">
-    <h2 class="title primary weapons">Primary Weapons</h2>
-
-    <div class="grid-triple">
-      <div class="select-block">
-        <select onchange="selectWeapons(this)">
+    <div class="section-triple">
+      <h2 class="title primary weapons">Primary Weapons</h2>
+      <div class="grid-triple">
+  
+        <select id="weapon" onchange="selectWeapons()">
           <option value=""> --------- </option>
           <option value="Icons/Solis.png">Solis</option>
           <option value="Icons/Deimos.png">Deimos</option>
           <option value="Icons/Rauora.png">Rauora</option>
         </select>
-        <img src="" alt="">
-      </div>
-
-      <div class="select-block">
-        <select onchange="selectWeapons(this)">
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
           <option value=""> --------- </option>
           <option value="Icons/Solis.png">Solis</option>
           <option value="Icons/Deimos.png">Deimos</option>
           <option value="Icons/Rauora.png">Rauora</option>
         </select>
-        <img src="" alt="">
-      </div>
-
-      <div class="select-block">
-        <select onchange="selectWeapons(this)">
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
           <option value=""> --------- </option>
           <option value="Icons/Solis.png">Solis</option>
           <option value="Icons/Deimos.png">Deimos</option>
           <option value="Icons/Rauora.png">Rauora</option>
         </select>
-        <img src="" alt="">
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
       </div>
-    </div>
-  </div>
+
+      <h2 class="title secondary weapons">Secondary Weapons</h2>
+      <div class="grid-triple">
+        
+        <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      </div>
+
+      <h2 class="title gadgets">Gadgets</h2>
+      <div class="grid-triple">
+  
+        <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      </div>
 
   <script>
-    function selectWeapons(selectElement) {
-      const img = selectElement.nextElementSibling; // zakłada, że <img> jest bezpośrednio po <select>
-      const chosen = selectElement.value;
+    function selectWeapons() {
+      const select = document.getElementById('weapon');
+      const img = document.getElementById('weaponBlueprint');
+      const chosen = select.value;
 
       if (chosen) {
         img.src = chosen;
@@ -76,5 +137,21 @@
     }
   </script>
 
+  <script>
+    function selectGadget() {
+      const select = document.getElementById('gadget');
+      const img = document.getElementById('gadgetBlueprint');
+      const chosen = select.value;
+
+      if (chosen) {
+        img.src = chosen;
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
