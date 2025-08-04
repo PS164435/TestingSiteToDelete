@@ -14,21 +14,131 @@
       <h2 class="title primary weapons">Primary Weapons</h2>
       <div class="grid-triple">
   
-  <select id="primaryWeapon" onchange="selectPrimaryWeapons()">
-    <option value=""> --------- </option>
-    <option value="Icons/Solis.png">Solis</option>
-    <option value="Icons/Deimos.png">Deimos</option>
-    <option value="Icons/Rauora.png">Rauora</option>
-  </select>
+        <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      </div>
 
-  <div>
-    <img id="weaponBlueprint" src="">
-  </div>
+      <div class="grid-triple">
+  
+        <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="weapon" onchange="selectWeapons()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      </div>
+
+      <div class="grid-triple">
+  
+        <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      
+         <select id="gadget" onchange="selectGadget()">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+      
+        <div>
+          <img id="weaponBlueprint" src="">
+        </div>
+      </div>
 
   <script>
-    function selectPrimaryWeapons() {
-      const select = document.getElementById('primaryWeapon');
+    function selectWeapons() {
+      const select = document.getElementById('weapon');
       const img = document.getElementById('weaponBlueprint');
+      const chosen = select.value;
+
+      if (chosen) {
+        img.src = chosen;
+        img.style.display = 'block';
+      } else {
+        img.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script>
+    function selectGadget() {
+      const select = document.getElementById('gadget');
+      const img = document.getElementById('gadgetBlueprint');
       const chosen = select.value;
 
       if (chosen) {
