@@ -17,14 +17,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 1px solid yellow;
+      border: 1px solid red;
       width: 100%;
       position: relative;
     }
-    select.weapon-select {
+    .weapon-select {
       position: absolute;
+      top: 0;
+      left: 3%;
+      width: 94%;
+      height: 100%;
       opacity: 0;
-      pointer-events: none;
+      z-index: 2;
+      cursor: pointer;
     }
     img {
       max-height: 180px;
@@ -36,6 +41,7 @@
       background-color: #090f19;
       object-fit: contain;
       cursor: pointer;
+      z-index: 1;
     }
   </style>
 </head>
@@ -164,16 +170,16 @@
 
   const defaultImage = 'Weapons/Empty.png';
     
-  document.querySelectorAll('.grid-triple').forEach(container => {
+ document.querySelectorAll('.grid-triple').forEach(container => {
     const select = container.querySelector('select.weapon-select');
     const img = container.querySelector('img');
 
     if (!select || !img) return;
 
-    // Ustaw domyślny obrazek na starcie
+    // Domyślny obrazek
     img.src = defaultImage;
 
-    // Wypełnij select
+    // Dodaj opcje
     const emptyOption = document.createElement('option');
     emptyOption.textContent = ' --------- ';
     emptyOption.value = '';
@@ -186,28 +192,13 @@
       select.appendChild(option);
     });
 
-    // Kliknięcie w obrazek = otwarcie selecta
-    img.addEventListener('click', () => {
-      select.style.pointerEvents = 'auto'; // włącz
-      select.focus();
-      select.click(); // otwórz listę
-      setTimeout(() => {
-        select.style.pointerEvents = 'none'; // wyłącz z powrotem
-      }, 500);
-    });
-
-    // Zmiana w select = zmiana obrazka
+    // Po wyborze z listy
     select.addEventListener('change', () => {
       const chosen = select.value;
-      if (chosen) {
-        img.src = chosen;
-      } else {
-        img.src = defaultImage;
-      }
+      img.src = chosen || defaultImage;
     });
   });
 </script>
-
 
 </body>
 </html>
