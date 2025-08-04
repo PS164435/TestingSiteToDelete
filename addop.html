@@ -5,12 +5,12 @@
   <title>Operator Sheet</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .grid-triple {
+    .section-triple {
       display: flex;
       gap: 20px;
       margin-bottom: 20px;
     }
-    .select-block {
+    .grid-triple {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -27,10 +27,10 @@
   <p><a href="index.html">BACK</a></p>
 
   <div class="triple-container">
-    <h2 class="title primary weapons">Primary Weapons</h2>
 
-    <div class="grid-triple">
-      <div class="select-block">
+    <div class="section-triple">
+      <h2 class="title primary weapons">Primary Weapons</h2>
+      <div class="grid-triple">
         <select onchange="selectWeapons(this)">
           <option value=""> --------- </option>
           <option value="Icons/Solis.png">Solis</option>
@@ -60,13 +60,77 @@
         <img src="" alt="">
       </div>
     </div>
-  </div>
+
+    <div class="section-triple">
+      <h2 class="title primary weapons">Primary Weapons</h2>
+      <div class="grid-triple">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+
+      <div class="select-block">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+
+      <div class="select-block">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+    </div>
+
+    <div class="section-triple">
+      <h2 class="title primary weapons">Primary Weapons</h2>
+      <div class="grid-triple">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+
+      <div class="select-block">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+
+      <div class="select-block">
+        <select onchange="selectWeapons(this)">
+          <option value=""> --------- </option>
+          <option value="Icons/Solis.png">Solis</option>
+          <option value="Icons/Deimos.png">Deimos</option>
+          <option value="Icons/Rauora.png">Rauora</option>
+        </select>
+        <img src="" alt="">
+      </div>
+    </div>
 
   <script>
     function selectWeapons(selectElement) {
-      const img = selectElement.nextElementSibling; // zakłada, że <img> jest bezpośrednio po <select>
+      const img = selectElement.nextElementSibling;
       const chosen = selectElement.value;
-
       if (chosen) {
         img.src = chosen;
         img.style.display = 'block';
