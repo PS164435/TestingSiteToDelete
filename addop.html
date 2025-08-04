@@ -54,31 +54,19 @@
       <h2 class="title primary weapon">PRIMARY WEAPON</h2>
       </div>
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
@@ -89,31 +77,19 @@
       <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
       </div>
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
@@ -124,31 +100,19 @@
       <h2 class="title gadget">GADGET</h2>
       </div>
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
@@ -159,48 +123,57 @@
       <h2 class="title gadget">UNIQUE ABILITY</h2>
       </div>
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select onchange="selectWeapons(this)">
-          <option value=""> --------- </option>
-          <option value="Icons/Solis.png">Solis</option>
-          <option value="Icons/Deimos.png">Deimos</option>
-          <option value="Icons/Rauora.png">Rauora</option>
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img src="" alt="">
       </div>
     </div>
 
   <script>
-    function selectWeapons(selectElement) {
-      const img = selectElement.nextElementSibling;
-      const chosen = selectElement.value;
-      if (chosen) {
-        img.src = chosen;
-        img.style.display = 'block';
-      } else {
-        img.style.display = 'none';
-      }
+  const options = [
+    { name: 'Solis', value: 'Icons/Solis.png' },
+    { name: 'Deimos', value: 'Icons/Deimos.png' },
+    { name: 'Rauora', value: 'Icons/Rauora.png' },
+  ];
+
+  document.querySelectorAll('select.weapon-select').forEach(select => {
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = ' --------- ';
+    emptyOption.value = '';
+    select.appendChild(emptyOption);
+
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.textContent = opt.name;
+      option.value = opt.value;
+      select.appendChild(option);
+    });
+  });
+
+  function selectWeapons(selectElement) {
+    const img = selectElement.nextElementSibling;
+    const chosen = selectElement.value;
+    if (chosen) {
+      img.src = chosen;
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
     }
-  </script>
+  }
+</script>
+
 
 </body>
 </html>
