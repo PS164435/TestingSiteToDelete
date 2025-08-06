@@ -109,7 +109,7 @@ body {
   cursor: pointer;
 }
 
-img {
+.loadout {
   max-height: 180px;
   width: 94%;
   height: auto;
