@@ -130,6 +130,12 @@
 
     img.src = '';
 
+     // Tworzymy pustą opcję, którą dodamy na górę listy wyboru
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = ' --------- ';
+    emptyOption.value = '';
+    select.appendChild(emptyOption);
+
     // Przechodzimy przez wszystkie wpisy z obiektu "options"
     Object.entries(options).forEach(([mainCategory, subgroups]) => {
     Object.entries(subgroups).forEach(([subgroup, items]) => {
