@@ -76,7 +76,7 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  border: 1px solid red;
+  border: 0px solid red;
   width: 100%;
   position: relative;
   justify-content: center;
