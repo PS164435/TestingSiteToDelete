@@ -131,10 +131,10 @@
     img.src = '';
 
     // Przechodzimy przez wszystkie wpisy z obiektu "options"
-    Object.entries(options).forEach(([category, items]) => {
-      
+    Object.entries(options).forEach(([mainCategory, subgroups]) => {
+    Object.entries(subgroups).forEach(([subgroup, items]) => {
       const group = document.createElement('optgroup');
-      group.label = category;
+      group.label = `${mainCategory} – ${subgroup}`;
 
       items.forEach(opt => {
         const option = document.createElement('option');
