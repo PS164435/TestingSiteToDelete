@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -129,34 +129,40 @@
 
     if (!select || !img) return;
 
-    img.src = '';
+    img.src = defaultImage;
 
     const emptyOption = document.createElement('option');
     emptyOption.textContent = '      --------- ';
     emptyOption.value = '';
     select.appendChild(emptyOption);
 
-    // Kategorie główne i podkategorie
-    Object.entries(options).forEach(([mainCategory, subCategories]) => {
-      const mainOptGroup = document.createElement('optgroup');
-      mainOptGroup.label = mainCategory;
+      // Główne kategorie
+  Object.entries(options).forEach(([mainCategory, subGroups]) => {
+    // Dodaj główną kategorię jako nagłówek
+    const mainOption = document.createElement('option');
+    mainOption.textContent = mainCategory;
+    mainOption.disabled = true;
+    mainOption.className = 'option-main';
+    select.appendChild(mainOption);
 
-      Object.entries(subCategories).forEach(([subCategory, weapons]) => {
-        const subOptGroup = document.createElement('optgroup');
-        subOptGroup.label = subCategory;
+    // Podkategorie (np. DEFAULT / CUSTOM)
+    Object.entries(subGroups).forEach(([subGroup, weapons]) => {
+      const subOption = document.createElement('option');
+      subOption.textContent = subGroup;
+      subOption.disabled = true;
+      subOption.className = 'option-sub';
+      select.appendChild(subOption);
 
-        weapons.forEach(weapon => {
-          const option = document.createElement('option');
-          option.textContent = weapon.name;
-          option.value = weapon.value;
-          subOptGroup.appendChild(option);
-        });
-
-        mainOptGroup.appendChild(subOptGroup);
+      // Broń
+      weapons.forEach(weapon => {
+        const weaponOption = document.createElement('option');
+        weaponOption.textContent = weapon.name;
+        weaponOption.value = weapon.value;
+        weaponOption.className = 'option-weapon';
+        select.appendChild(weaponOption);
       });
-  
-      select.appendChild(mainOptGroup);
     });
+  });
 
     // Obsługa wyboru
     select.addEventListener('change', () => {
