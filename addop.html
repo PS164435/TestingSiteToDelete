@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -122,54 +122,47 @@
     
   <script>
   const defaultImage = 'Weapons/Empty.png';
+    
+  document.querySelectorAll('.grid-triple').forEach(container => {
+    const select = container.querySelector('select.weapon-select');
+    const img = container.querySelector('img');
 
-document.querySelectorAll('.grid-triple').forEach(container => {
-  const select = container.querySelector('select.weapon-select');
-  const img = container.querySelector('img');
+    if (!select || !img) return;
 
-  if (!select || !img) return;
+    img.src = defaultImage;
 
-  img.src = defaultImage;
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = ' --------- ';
+    emptyOption.value = '';
+    select.appendChild(emptyOption);
 
-  const emptyOption = document.createElement('option');
-  emptyOption.textContent = ' --------- ';
-  emptyOption.value = '';
-  select.appendChild(emptyOption);
+    // Kategorie i opcje
+    Object.entries(options).forEach(([category, items]) => {
+      const group = document.createElement('optgroup');
+      group.label = category;
 
-  // Kategorie główne i podkategorie
-  Object.entries(options).forEach(([mainCategory, subCategories]) => {
-    const mainOptGroup = document.createElement('optgroup');
-    mainOptGroup.label = mainCategory;
-
-    Object.entries(subCategories).forEach(([subCategory, weapons]) => {
-      const subOptGroup = document.createElement('optgroup');
-      subOptGroup.label = subCategory;
-
-      weapons.forEach(weapon => {
+      items.forEach(opt => {
         const option = document.createElement('option');
-        option.textContent = weapon.name;
-        option.value = weapon.value;
-        subOptGroup.appendChild(option);
+        option.textContent = opt.name;
+        option.value = opt.value;
+        group.appendChild(option);
       });
 
-      mainOptGroup.appendChild(subOptGroup);
+      select.appendChild(group);
     });
 
-    select.appendChild(mainOptGroup);
-  });
+    // Obsługa wyboru
+    select.addEventListener('change', () => {
+      const chosen = select.value;
+      img.src = chosen || defaultImage;
+      select.style.display = 'none';
+    });
 
-  // Obsługa wyboru
-  select.addEventListener('change', () => {
-    const chosen = select.value;
-    img.src = chosen || defaultImage;
-    select.style.display = 'none';
+    // Kliknięcie w obrazek = pokaż listę
+    img.addEventListener('click', () => {
+      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+    });
   });
-
-  // Kliknięcie w obrazek = pokaż listę
-  img.addEventListener('click', () => {
-    select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
-  });
-});
 </script>
 
 </body>
