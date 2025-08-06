@@ -169,14 +169,12 @@
       const chosen = select.value;
       img.src = chosen || defaultImage;
       select.style.display = 'none';
-      isSelectVisible = false;
     });
 
 
     // Kliknięcie w obrazek = pokaż listę
     img.addEventListener('click', () => {
-      isSelectVisible = !isSelectVisible;
-      select.style.display = isSelectVisible ? 'block' : 'none';
+      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
     });
   });
 </script>
