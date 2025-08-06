@@ -1,5 +1,5 @@
 const options = {
-  "---- ASSAULT RIFLE ----": {
+  "======== ASSAULT RIFLE ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: '416-C CARBINE', value: 'Weapons/416-C CARBINE.png' },
       { name: '552 COMMANDO', value: 'Weapons/552 COMMANDO.png' },
@@ -34,7 +34,7 @@ const options = {
       
     ],
   },
-  "---- LIGHT MACHINE GUN ----": {
+  "======== LIGHT MACHINE GUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: '6P41', value: 'Weapons/6P41.png' },
       { name: 'ALDA 5.56', value: 'Weapons/ALDA 5.56.png' },
@@ -48,7 +48,7 @@ const options = {
       
     ],
   },
-  "---- MARKSMAN RIFLE ----": {
+  "======== MARKSMAN RIFLE ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: '417', value: 'Weapons/417.png' },
       { name: 'AR-15.50', value: 'Weapons/AR-15.50.png' },
@@ -61,7 +61,7 @@ const options = {
       
     ],
   },
-  "---- SNIPER RIFLE ----": {
+  "======== SNIPER RIFLE ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'CRSX 300', value: 'Weapons/CRSX 300.png' },
       
@@ -70,7 +70,7 @@ const options = {
       
     ],
   },
-  "---- SUBMACHINE GUN ----": {
+  "======== SUBMACHINE GUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: '9MM C1', value: 'Weapons/9MM C1.png' },
       { name: '9X19VSN', value: 'Weapons/9X19VSN.png' },
@@ -97,7 +97,7 @@ const options = {
       
     ],
   },
-  "---- SLUG SHOTGUN ----": {
+  "======== SLUG SHOTGUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'ACS 12', value: 'Weapons/ACS 12.png' },
       { name: 'BOSG. 12.2', value: 'Weapons/BOSG. 12.2.png' },
@@ -107,7 +107,7 @@ const options = {
       
     ],
   },
-  "---- SHOTGUN ----": {
+  "======== SHOTGUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'FO-12', value: 'Weapons/FO-12.png' },
       { name: 'ITA12L', value: 'Weapons/ITA12L.png' },
@@ -130,7 +130,7 @@ const options = {
       
     ],
   },
-  "---- MACHINE PISTOL ----": {
+  "======== MACHINE PISTOL ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'BEARING 9', value: 'Weapons/BEARING 9.png' },
       { name: 'C75 AUTO', value: 'Weapons/C75 AUTO.png' },
@@ -143,7 +143,7 @@ const options = {
       
     ],
   },
-  "---- REVOLVER ----": {
+  "======== REVOLVER ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'KERATOS .357', value: 'Weapons/KERATOS .357.png' },
       { name: 'LFP586', value: 'Weapons/LFP586.png' },
@@ -154,7 +154,7 @@ const options = {
       
     ],
   },
-  "---- HANDGUN ----": {
+  "======== HANDGUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: '1911 TACOPS', value: 'Weapons/1911 TACOPS.png' },
       { name: '5.7 USG', value: 'Weapons/5.7 USG.png' },
@@ -179,7 +179,7 @@ const options = {
       
     ],
   },
-  "---- SHIELD ----": {
+  "======== SHIELD ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'BALLISTIC SHIELD', value: 'Weapons/BALLISTIC SHIELD.png' },
       
@@ -188,7 +188,7 @@ const options = {
       
     ],
   },
-  "---- HAND CANNON ----": {
+  "======== HAND CANNON ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'GONNE-6', value: 'Weapons/GONNE-6.png' },
       
