@@ -121,23 +121,18 @@
   <script src="weapons.js"></script>
     
   <script>
-  const defaultImage = 'Weapons/Empty.png';
     
   document.querySelectorAll('.grid-triple').forEach(container => {
+    
     const select = container.querySelector('select.weapon-select');
     const img = container.querySelector('img');
-
     if (!select || !img) return;
 
-    img.src = defaultImage;
+    img.src = '';
 
-    const emptyOption = document.createElement('option');
-    emptyOption.textContent = ' --------- ';
-    emptyOption.value = '';
-    select.appendChild(emptyOption);
-
-    // Kategorie i opcje
+    // Przechodzimy przez wszystkie wpisy z obiektu "options"
     Object.entries(options).forEach(([category, items]) => {
+      
       const group = document.createElement('optgroup');
       group.label = category;
 
@@ -151,17 +146,18 @@
       select.appendChild(group);
     });
 
-    // Obsługa wyboru
+    // Po wybraniu opcji z listy, zmień obrazek
     select.addEventListener('change', () => {
       const chosen = select.value;
-      img.src = chosen || defaultImage;
+      img.src = chosen;
       select.style.display = 'none';
     });
 
-    // Kliknięcie w obrazek = pokaż listę
+    // Kliknięcie w obrazek pokaże lub ukryje listę select
     img.addEventListener('click', () => {
       select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
     });
+    
   });
 </script>
 
