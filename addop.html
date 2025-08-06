@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK3</a></p>
+  <p><a href="index.html">BACK</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -169,12 +169,14 @@
       const chosen = select.value;
       img.src = chosen || defaultImage;
       select.style.display = 'none';
+      isSelectVisible = false;
     });
 
 
     // Kliknięcie w obrazek = pokaż listę
     img.addEventListener('click', () => {
-      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+      isSelectVisible = !isSelectVisible;
+      select.style.display = isSelectVisible ? 'block' : 'none';
     });
   });
 </script>
