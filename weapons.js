@@ -1,4 +1,5 @@
-const options = [
+const options = {
+  "Defoult guns": [
   { name: '1911 TACOPS', value: 'Weapons/1911 TACOPS.png' },
   { name: '416-C CARBINE', value: 'Weapons/416-C CARBINE.png' },
   { name: '417', value: 'Weapons/417.png' },
@@ -107,4 +108,11 @@ const options = [
   { name: 'UZK50GI', value: 'Weapons/UZK50GI.png' },
   { name: 'V308', value: 'Weapons/V308.png' },
   { name: 'VECTOR .45 ACP', value: 'Weapons/VECTOR .45 ACP.png' },
-  ];
+  ],
+  "Custom guns": [
+  { name: 'UZK50GI', value: 'Weapons/UZK50GI.png' },
+  { name: 'V308', value: 'Weapons/V308.png' },
+  { name: 'VECTOR .45 ACP', value: 'Weapons/VECTOR .45 ACP.png' },
+  ],
+  };
+    
