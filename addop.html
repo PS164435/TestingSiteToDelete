@@ -136,16 +136,28 @@
     emptyOption.value = '';
     select.appendChild(emptyOption);
 
-    options.forEach(opt => {
-      const option = document.createElement('option');
-      option.textContent = opt.name;
-      option.value = opt.value;
-      select.appendChild(option);
+     Object.entries(options).forEach(([category, items]) => {
+      const group = document.createElement('optgroup');
+      group.label = category;
+
+      items.forEach(opt => {
+        const option = document.createElement('option');
+        option.textContent = opt.name;
+        option.value = opt.value;
+        group.appendChild(option);
+      });
+
+      select.appendChild(group);
     });
-   
+
     select.addEventListener('change', () => {
       const chosen = select.value;
       img.src = chosen || defaultImage;
+      select.style.display = 'none';
+    });
+
+    img.addEventListener('click', () => {
+      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
     });
   });
 </script>
