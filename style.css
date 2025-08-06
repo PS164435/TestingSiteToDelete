@@ -122,22 +122,19 @@ body {
   z-index: 1;
 }
 
-  select.weapon-select {
+ select option.option-main {
   background-color: #003366;
-  color: white;
-  padding: 5px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: none;
-}
-
-select.weapon-select optgroup {
-  background-color: #336699;
   color: white;
   font-weight: bold;
 }
 
-select.weapon-select option {
-  background-color: #006633;
+select option.option-sub {
+  background-color: #005599;
+  color: white;
+  font-style: italic;
+}
+
+select option.option-weapon {
+  background-color: #004400;
   color: white;
 }
