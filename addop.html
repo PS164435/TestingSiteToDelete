@@ -136,20 +136,31 @@
     emptyOption.value = '';
     select.appendChild(emptyOption);
 
-     Object.entries(options).forEach(([category, items]) => {
-      const group = document.createElement('optgroup');
-      group.label = category;
+   Object.entries(options).forEach(([category, subgroups]) => {
+  // Główna kategoria (np. ---- ASSAULT RIFLE ----)
+  const mainLabel = document.createElement('option');
+  mainLabel.textContent = category;
+  mainLabel.disabled = true;
+  mainLabel.style.fontWeight = 'bold';
+  mainLabel.style.color = 'darkred'; // Kolor kategorii
+  select.appendChild(mainLabel);
 
-      items.forEach(opt => {
-        const option = document.createElement('option');
-        option.textContent = opt.name;
-        option.value = opt.value;
-        group.appendChild(option);
-      });
+  // Podkategorie (np. -- DEFAULT WEAPON --)
+  Object.entries(subgroups).forEach(([subcat, weapons]) => {
+    const subcatLabel = document.createElement('option');
+    subcatLabel.textContent = subcat;
+    subcatLabel.disabled = true;
+    subcatLabel.style.color = 'gray'; // Kolor podkategorii
+    select.appendChild(subcatLabel);
 
-      select.appendChild(group);
+    weapons.forEach(opt => {
+      const option = document.createElement('option');
+      option.textContent = opt.name;
+      option.value = opt.value;
+      select.appendChild(option);
     });
-
+  });
+});
     select.addEventListener('change', () => {
       const chosen = select.value;
       img.src = chosen || defaultImage;
