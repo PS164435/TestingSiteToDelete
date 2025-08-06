@@ -121,3 +121,23 @@ body {
   cursor: pointer;
   z-index: 1;
 }
+
+  select.weapon-select {
+  background-color: #003366;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+}
+
+select.weapon-select optgroup {
+  background-color: #336699;
+  color: white;
+  font-weight: bold;
+}
+
+select.weapon-select option {
+  background-color: #006633;
+  color: white;
+}
