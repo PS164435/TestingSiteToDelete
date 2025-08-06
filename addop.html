@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK15</a></p>
+  <p><a href="index.html">BACK16</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -129,7 +129,7 @@
 
     if (!select || !img) return;
 
-    img.src = defaultImage;
+    img.src = '';
 
     const emptyOption = document.createElement('option');
     emptyOption.textContent = ' --------- ';
@@ -154,7 +154,7 @@
     // Obsługa wyboru
     select.addEventListener('change', () => {
       const chosen = select.value;
-      img.src = chosen || defaultImage;
+      img.src = chosen || '';
       select.style.display = 'none';
     });
 
