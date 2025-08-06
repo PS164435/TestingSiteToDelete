@@ -1,4 +1,6 @@
-const options = {
+const options = { [
+  { name: ' ------ ', value: '' },
+  ],
   "Defoult guns": [
   { name: '1911 TACOPS', value: 'Weapons/1911 TACOPS.png' },
   { name: '416-C CARBINE', value: 'Weapons/416-C CARBINE.png' },
