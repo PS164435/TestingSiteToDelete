@@ -10,6 +10,7 @@ body {
 .header {
   padding: 20px;
 }
+
 .header img {
   max-width: 700px;
 }
@@ -37,9 +38,13 @@ body {
 }
 
 .section-triple {
-  margin: 0px;
-  width: 0%;
   max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin: 5px 0%;
+  border: 0px solid green;
+  width: 25%;
 }
 
 .title {
@@ -68,11 +73,15 @@ body {
 
 .grid-triple {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+  border: 0px solid red;
+  width: 100%;
+  position: relative;
   justify-content: center;
   gap: 20px;
   padding: 0px;
-  width: 100%;
 }
 
 .square {
@@ -87,4 +96,28 @@ body {
 
 .square:hover {
   transform: scale(1.1);
+}
+
+.weapon-select {
+  position: absolute;
+  top: 0;
+  left: 3%;
+  width: 94%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+img {
+  max-height: 180px;
+  width: 94%;
+  height: auto;
+  margin: 10px 0px;
+  display: block;
+  border: 1px solid #b0bac6;
+  background-color: #090f19;
+  object-fit: contain;
+  cursor: pointer;
+  z-index: 1;
 }
