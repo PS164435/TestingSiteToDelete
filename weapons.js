@@ -189,3 +189,32 @@ const secondaryWeapons = {
     ],
   },
 };
+
+const gadgets = {
+  "======== ATTACK ========": {
+    " -- DEFAULT GADGET -- ": [
+      { name: 'BREACH CHARGE', value: 'Weapons/BREACH CHARGE.png' },
+      { name: 'CLAYMORE', value: 'Weapons/CLAYMORE.png' },
+      { name: 'FRAG GRENADE', value: 'Weapons/FRAG GRENADE.png' },
+      { name: 'HARD BREACH CHARGE', value: 'Weapons/HARD BREACH CHARGE.png' },
+      { name: 'SMOKE GRENADE', value: 'Weapons/SMOKE GRENADE.png' },
+      { name: 'STUN GRENADE', value: 'Weapons/STUN GRENADE.png' },
+      { name: 'IMPACT EMP GRENADE', value: 'Weapons/IMPACT EMP GRENADE.png' },
+    ],
+    " -- CUSTOM GADGET -- ": [
+    ],
+  },
+  "======== DEFENCE ========": {
+    " -- DEFAULT GADGET -- ": [
+      { name: 'BARBED WIRE', value: 'Weapons/BARBED WIRE.png' },
+      { name: 'BULLETPROOF CAMERA', value: 'Weapons/BULLETPROOF CAMERA.png' },
+      { name: 'DEPLOYABLE SHIELD', value: 'Weapons/DEPLOYABLE SHIELD.png' },
+      { name: 'OBSERVATION BLOCKER', value: 'Weapons/OBSERVATION BLOCKER.png' },
+      { name: 'IMPACT GRENADE', value: 'Weapons/IMPACT GRENADE.png' },
+      { name: 'NITRO CELL', value: 'Weapons/NITRO CELL.png' },
+      { name: 'PROXIMITY ALARM', value: 'Weapons/PROXIMITY ALARM.png' },
+    ],
+    " -- CUSTOM GADGET -- ": [
+    ],
+  },
+};
