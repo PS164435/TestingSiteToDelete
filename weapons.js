@@ -40,7 +40,7 @@ const primaryWeapons = {
       { name: 'DP27', value: 'Weapons/DP27.png' },
       { name: 'M249 SAW', value: 'Weapons/M249 SAW.png' },
       { name: 'M249', value: 'Weapons/M249.png' },
-      { name: 'MLG-E', value: 'Weapons/MLG-E.png' },
+      { name: 'LMG-E', value: 'Weapons/LMG-E.png' },
       { name: 'T-95 LSW', value: 'Weapons/T-95 LSW.png' },
     ],
     " -- CUSTOM WEAPON -- ": [ 
