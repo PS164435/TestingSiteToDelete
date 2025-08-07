@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -33,13 +33,13 @@
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
@@ -56,7 +56,7 @@
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
@@ -68,7 +68,7 @@
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
     </div>
 
@@ -91,7 +91,7 @@
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
     </div>
 
@@ -108,13 +108,13 @@
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout src="" alt="">
+        <img class="loadout" src="" alt="">
       </div>
     </div>
 
@@ -131,35 +131,35 @@
 
     img.src = defaultImage;
 
-    const emptyprimaryWeapons = document.createElement('primaryWeapons');
-    emptyprimaryWeapons.textContent = '      --------- ';
-    emptyprimaryWeapons.value = '';
-    select.appendChild(emptyprimaryWeapons);
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = '      --------- ';
+    emptyOption.value = '';
+    select.appendChild(emptyOption);
 
       // Główne kategorie
-  Object.entries(primaryWeaponss).forEach(([mainCategory, subGroups]) => {
+  Object.entries(options).forEach(([mainCategory, subGroups]) => {
     // Dodaj główną kategorię jako nagłówek
-    const mainprimaryWeapons = document.createElement('primaryWeapons');
-    mainprimaryWeapons.textContent = mainCategory;
-    mainprimaryWeapons.disabled = true;
-    mainprimaryWeapons.className = 'primaryWeapons-main';
-    select.appendChild(mainprimaryWeapons);
+    const mainOption = document.createElement('option');
+    mainOption.textContent = mainCategory;
+    mainOption.disabled = true;
+    mainOption.className = 'option-main';
+    select.appendChild(mainOption);
 
     // Podkategorie (np. DEFAULT / CUSTOM)
     Object.entries(subGroups).forEach(([subGroup, weapons]) => {
-      const subprimaryWeapons = document.createElement('primaryWeapons');
-      subprimaryWeapons.textContent = subGroup;
-      subprimaryWeapons.disabled = true;
-      subprimaryWeapons.className = 'primaryWeapons-sub';
-      select.appendChild(subprimaryWeapons);
+      const subOption = document.createElement('option');
+      subOption.textContent = subGroup;
+      subOption.disabled = true;
+      subOption.className = 'option-sub';
+      select.appendChild(subOption);
 
       // Broń
       weapons.forEach(weapon => {
-        const weaponprimaryWeapons = document.createElement('primaryWeapons');
-        weaponprimaryWeapons.textContent = weapon.name;
-        weaponprimaryWeapons.value = weapon.value;
-        weaponprimaryWeapons.className = 'primaryWeapons-weapon';
-        select.appendChild(weaponprimaryWeapons);
+        const weaponOption = document.createElement('option');
+        weaponOption.textContent = weapon.name;
+        weaponOption.value = weapon.value;
+        weaponOption.className = 'option-weapon';
+        select.appendChild(weaponOption);
       });
     });
   });
