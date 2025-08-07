@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -28,39 +28,19 @@
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectPrimaryWeapon(this)">
+        <select class="weapon-select" data-type="primary" onchange="selectPrimaryWeapon(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectPrimaryWeapon(this)">
+        <select class="weapon-select" data-type="primary" onchange="selectPrimaryWeapon(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectPrimaryWeapon(this)">
-        </select>
-        <img class="loadout" src="" alt="">
-      </div>
-    </div>
-
-    <div class="section-triple">
-      <div class="grid-triple">
-        <select class="weapon-select" onchange="selectSecondaryWeapon(this)">
-        </select>
-        <img class="loadout" src="" alt="">
-      </div>
-
-      <div class="grid-triple">
-        <select class="weapon-select" onchange="selectSecondaryWeapon(this)">
-        </select>
-        <img class="loadout" src="" alt="">
-      </div>
-
-      <div class="grid-triple">
-        <select class="weapon-select" onchange="selectSecondaryWeapon(this)">
+        <select class="weapon-select" data-type="primary" onchange="selectPrimaryWeapon(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
@@ -68,19 +48,39 @@
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectGadget(this)">
+        <select class="weapon-select" data-type="secondary" onchange="selectSecondaryWeapon(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectGadget(this)">
+        <select class="weapon-select" data-type="secondary" onchange="selectSecondaryWeapon(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectGadget(this)">
+        <select class="weapon-select" data-type="secondary" onchange="selectSecondaryWeapon(this)">
+        </select>
+        <img class="loadout" src="" alt="">
+      </div>
+    </div>
+
+    <div class="section-triple">
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadgets" onchange="selectGadget(this)">
+        </select>
+        <img class="loadout" src="" alt="">
+      </div>
+
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadgets" onchange="selectGadget(this)">
+        </select>
+        <img class="loadout" src="" alt="">
+      </div>
+
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadgets" onchange="selectGadget(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
@@ -125,7 +125,15 @@
     select.appendChild(emptyOption);
 
     // Główne kategorie
-    Object.entries(primaryWeapons).forEach(([mainCategory, subGroups]) => {
+    let dataToDisplay;
+    if (selectedType === 'primary') {
+      dataToDisplay = primaryWeapons;
+    } else if (selectedType === 'secondary') {
+      dataToDisplay = secondaryWeapons;
+    } else if (selectedType === 'gadgets') {
+      dataToDisplay = gadgets;
+    }
+    Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
       // Dodaj główną kategorię jako nagłówek
       const mainOption = document.createElement('option');
       mainOption.textContent = mainCategory;
