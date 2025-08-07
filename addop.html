@@ -7,9 +7,7 @@
 </head>
 <body>
 
-  <script src="weapons.js"></script>
-
-  <p><a href="index.html">BACK6</a></p>
+  <p><a href="index.html">BACK1</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -33,21 +31,21 @@
       <h2 class="title primary weapon">PRIMARY WEAPON</h2>
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-category="primary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="primary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="primary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
     </div>
 
@@ -56,21 +54,21 @@
       <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-category="secondary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="secondary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="secondary">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
     </div>
 
@@ -79,21 +77,21 @@
       <h2 class="title gadget">GADGET</h2>
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-category="gadget">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="gadget">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="gadget">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
     </div>
 
@@ -102,84 +100,83 @@
       <h2 class="title gadget">UNIQUE ABILITY</h2>
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-category="ability">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="ability">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-category="ability">
+        <select class="weapon-select" onchange="selectWeapons(this)">
         </select>
-        <img class="loadout" src="" alt="">
+        <img class="loadout src="" alt="">
       </div>
     </div>
+
+  <script src="weapons.js"></script>
     
-  <!-- Dynamiczne ładowanie broni -->
   <script>
-    const defaultImage = 'Weapons/Empty.png';
+  const defaultImage = 'Weapons/Empty.png';
+    
+  document.querySelectorAll('.grid-triple').forEach(container => {
+    const select = container.querySelector('select.weapon-select');
+    const img = container.querySelector('img');
 
-    const weaponDataMap = {
-      primary: primaryWeapons,
-      secondary: secondaryWeapons,
-      gadget: {},         // możesz dodać dane dla gadżetów
-      ability: {}         // możesz dodać dane dla unikalnych zdolności
-    };
+    if (!select || !img) return;
 
-    document.querySelectorAll('.grid-triple').forEach(container => {
-      const select = container.querySelector('select.weapon-select');
-      const img = container.querySelector('img');
-      const category = select.dataset.category;
+    img.src = defaultImage;
 
-      if (!select || !img || !category) return;
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = '      --------- ';
+    emptyOption.value = '';
+    select.appendChild(emptyOption);
 
-      img.src = defaultImage;
+      // Główne kategorie
+  Object.entries(options).forEach(([mainCategory, subGroups]) => {
+    // Dodaj główną kategorię jako nagłówek
+    const mainOption = document.createElement('option');
+    mainOption.textContent = mainCategory;
+    mainOption.disabled = true;
+    mainOption.className = 'option-main';
+    select.appendChild(mainOption);
 
-      // Dodaj pustą opcję
-      const emptyOption = document.createElement('option');
-      emptyOption.textContent = '---------';
-      emptyOption.value = '';
-      select.appendChild(emptyOption);
+    // Podkategorie (np. DEFAULT / CUSTOM)
+    Object.entries(subGroups).forEach(([subGroup, weapons]) => {
+      const subOption = document.createElement('option');
+      subOption.textContent = subGroup;
+      subOption.disabled = true;
+      subOption.className = 'option-sub';
+      select.appendChild(subOption);
 
-      const options = weaponDataMap[category] || {};
-
-      Object.entries(options).forEach(([mainCategory, subGroups]) => {
-        const mainOption = document.createElement('option');
-        mainOption.textContent = mainCategory;
-        mainOption.disabled = true;
-        select.appendChild(mainOption);
-
-        Object.entries(subGroups).forEach(([subGroup, weapons]) => {
-          const subOption = document.createElement('option');
-          subOption.textContent = subGroup;
-          subOption.disabled = true;
-          select.appendChild(subOption);
-
-          weapons.forEach(weapon => {
-            const weaponOption = document.createElement('option');
-            weaponOption.textContent = weapon.name;
-            weaponOption.value = weapon.value;
-            select.appendChild(weaponOption);
-          });
-        });
-      });
-
-      // Zmiana opcji = zmień obrazek
-      select.addEventListener('change', () => {
-        img.src = select.value || defaultImage;
-      });
-
-      // Kliknięcie w obrazek = pokaż ukryj select
-      img.addEventListener('click', () => {
-        select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+      // Broń
+      weapons.forEach(weapon => {
+        const weaponOption = document.createElement('option');
+        weaponOption.textContent = weapon.name;
+        weaponOption.value = weapon.value;
+        weaponOption.className = 'option-weapon';
+        select.appendChild(weaponOption);
       });
     });
-  </script>
+  });
+
+    // Obsługa wyboru
+    select.addEventListener('change', () => {
+      const chosen = select.value;
+      img.src = chosen || defaultImage;
+    });
+
+
+    // Kliknięcie w obrazek = pokaż listę
+    img.addEventListener('click', () => {
+      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+    });
+  });
+</script>
 
 </body>
 </html>
