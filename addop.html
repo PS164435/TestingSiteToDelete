@@ -120,63 +120,46 @@
 
   <script src="weapons.js"></script>
     
-  <script>
-  const defaultImage = 'Weapons/Empty.png';
-    
-  document.querySelectorAll('.grid-triple').forEach(container => {
-    const select = container.querySelector('select.weapon-select');
-    const img = container.querySelector('img');
+ <script>
+    function setupWeaponSelector(imgId, selectId, weaponsData) {
+      const img = document.getElementById(imgId);
+      const select = document.getElementById(selectId);
 
-    if (!select || !img) return;
+      // Wypełnij <select> z danymi
+      for (const category in weaponsData) {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = category;
 
-    img.src = defaultImage;
+        const groups = weaponsData[category];
+        for (const sub in groups) {
+          const weapons = groups[sub];
+          for (const weapon of weapons) {
+            const option = document.createElement('option');
+            option.value = weapon.value;
+            option.textContent = weapon.name;
+            optgroup.appendChild(option);
+          }
+        }
 
-    const emptyOption = document.createElement('option');
-    emptyOption.textContent = '      --------- ';
-    emptyOption.value = '';
-    select.appendChild(emptyOption);
+        select.appendChild(optgroup);
+      }
 
-      // Główne kategorie
-  Object.entries(options).forEach(([mainCategory, subGroups]) => {
-    // Dodaj główną kategorię jako nagłówek
-    const mainOption = document.createElement('option');
-    mainOption.textContent = mainCategory;
-    mainOption.disabled = true;
-    mainOption.className = 'option-main';
-    select.appendChild(mainOption);
-
-    // Podkategorie (np. DEFAULT / CUSTOM)
-    Object.entries(subGroups).forEach(([subGroup, weapons]) => {
-      const subOption = document.createElement('option');
-      subOption.textContent = subGroup;
-      subOption.disabled = true;
-      subOption.className = 'option-sub';
-      select.appendChild(subOption);
-
-      // Broń
-      weapons.forEach(weapon => {
-        const weaponOption = document.createElement('option');
-        weaponOption.textContent = weapon.name;
-        weaponOption.value = weapon.value;
-        weaponOption.className = 'option-weapon';
-        select.appendChild(weaponOption);
+      // Zmiana wyboru
+      select.addEventListener('change', () => {
+        img.src = select.value || 'default.png';
       });
-    });
-  });
 
-    // Obsługa wyboru
-    select.addEventListener('change', () => {
-      const chosen = select.value;
-      img.src = chosen || defaultImage;
-    });
+      // Klik w obrazek = pokaż/ukryj select
+      img.addEventListener('click', () => {
+        const isHidden = window.getComputedStyle(select).display === 'none';
+        select.style.display = isHidden ? 'block' : 'none';
+      });
+    }
 
-
-    // Kliknięcie w obrazek = pokaż listę
-    img.addEventListener('click', () => {
-      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
-    });
-  });
-</script>
+    // Inicjalizacja
+    setupWeaponSelector('primaryImage', 'selectPrimary', primaryWeapons);
+    setupWeaponSelector('secondaryImage', 'selectSecondary', secondaryWeapons);
+  </script>
 
 </body>
 </html>
