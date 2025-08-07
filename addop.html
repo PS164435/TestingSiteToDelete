@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK4</a></p>
+  <p><a href="index.html">BACK5</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -108,9 +108,7 @@
 
   <script src="weapons.js"></script>
     
-  <script>
-  const defaultImage = 'Weapons/Empty.png';
-    
+  <script>    
   document.querySelectorAll('.grid-triple').forEach(container => {
     const select = container.querySelector('select.weapon-select');
     const img = container.querySelector('img');
@@ -148,7 +146,7 @@
     });
     select.addEventListener('change', () => {
       const chosen = select.value;
-      img.src = chosen || defaultImage; 
+      img.src = chosen || ''; 
     });
     img.addEventListener('click', () => { 
       select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none'; 
