@@ -31,7 +31,6 @@ const primaryWeapons = {
       { name: 'V308', value: 'Weapons/V308.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== LIGHT MACHINE GUN ========": {
@@ -44,8 +43,7 @@ const primaryWeapons = {
       { name: 'MLG-E', value: 'Weapons/MLG-E.png' },
       { name: 'T-95 LSW', value: 'Weapons/T-95 LSW.png' },
     ],
-    " -- CUSTOM WEAPON -- ": [
-      
+    " -- CUSTOM WEAPON -- ": [ 
     ],
   },
   "======== MARKSMAN RIFLE ========": {
@@ -58,16 +56,13 @@ const primaryWeapons = {
       { name: 'SR-25', value: 'Weapons/SR-25.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== SNIPER RIFLE ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'CRSX 300', value: 'Weapons/CRSX 300.png' },
-      
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== SUBMACHINE GUN ========": {
@@ -91,10 +86,8 @@ const primaryWeapons = {
       { name: 'UMP45', value: 'Weapons/UMP45.png' },
       { name: 'UZK50GI', value: 'Weapons/UZK50GI.png' },
       { name: 'VECTOR .45 ACP', value: 'Weapons/VECTOR .45 ACP.png' },
-      
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== SLUG SHOTGUN ========": {
@@ -104,14 +97,12 @@ const primaryWeapons = {
       { name: 'TCSG12', value: 'Weapons/TCSG12.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== SHOTGUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'FO-12', value: 'Weapons/FO-12.png' },
       { name: 'ITA12L', value: 'Weapons/ITA12L.png' },
-      { name: 'ITA12S', value: 'Weapons/ITA12S.png' },
       { name: 'M1014', value: 'Weapons/M1014.png' },
       { name: 'M590A1', value: 'Weapons/M590A1.png' },
       { name: 'M870', value: 'Weapons/M870.png' },
@@ -122,12 +113,27 @@ const primaryWeapons = {
       { name: 'SPAS-12', value: 'Weapons/SPAS-12.png' },
       { name: 'SPAS-15', value: 'Weapons/SPAS-15.png' },
       { name: 'SUPER 90', value: 'Weapons/SUPER 90.png' },
-      { name: 'SUPER SHORTY', value: 'Weapons/SUPER SHORTY.png' },
       { name: 'SUPERNOVA', value: 'Weapons/SUPERNOVA.png' },
-      
+    ],
+    " -- CUSTOM WEAPON -- ": [ 
+    ],
+  },
+  "======== SHIELD ========": {
+    " -- DEFAULT WEAPON -- ": [
+      { name: 'BALLISTIC SHIELD', value: 'Weapons/BALLISTIC SHIELD.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
+    ],
+  },
+};
+
+const secondaryWeapons = {
+  "======== SHOTGUN ========": {
+    " -- DEFAULT WEAPON -- ": [
+      { name: 'ITA12S', value: 'Weapons/ITA12S.png' },
+      { name: 'SUPER SHORTY', value: 'Weapons/SUPER SHORTY.png' },
+    ],
+    " -- CUSTOM WEAPON -- ": [
     ],
   },
   "======== MACHINE PISTOL ========": {
@@ -140,7 +146,6 @@ const primaryWeapons = {
       { name: 'SPSMG9', value: 'Weapons/SPSMG9.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== REVOLVER ========": {
@@ -148,10 +153,8 @@ const primaryWeapons = {
       { name: 'KERATOS .357', value: 'Weapons/KERATOS .357.png' },
       { name: 'LFP586', value: 'Weapons/LFP586.png' },
       { name: 'BAILIFF 410', value: 'Weapons/BAILIFF 410.png' },
-      
     ],
     " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== HANDGUN ========": {
@@ -176,25 +179,13 @@ const primaryWeapons = {
       { name: 'USP40', value: 'Weapons/USP40.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
-      
-    ],
-  },
-  "======== SHIELD ========": {
-    " -- DEFAULT WEAPON -- ": [
-      { name: 'BALLISTIC SHIELD', value: 'Weapons/BALLISTIC SHIELD.png' },
-      
-    ],
-    " -- CUSTOM WEAPON -- ": [
-      
     ],
   },
   "======== HAND CANNON ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'GONNE-6', value: 'Weapons/GONNE-6.png' },
-      
     ],
-    " -- CUSTOM WEAPON -- ": [
-      
+    " -- CUSTOM WEAPON -- ": [ 
     ],
   },
 };
