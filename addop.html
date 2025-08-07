@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK2</a></p>
+  <p><a href="index.html">BACK3</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -114,43 +114,29 @@
   document.querySelectorAll('.grid-triple').forEach(container => {
     const select = container.querySelector('select.weapon-select');
     const img = container.querySelector('img');
-
     if (!select || !img) return;
-
-    img.src = defaultImage;
-
+    img.src = '';
     const emptyOption = document.createElement('option');
     emptyOption.textContent = '      --------- ';
     emptyOption.value = '';
     select.appendChild(emptyOption);
-
-    // Główne kategorie
     let dataToDisplay;
     const selectedType = select.dataset.type;
-    if (selectedType === 'primary') {
-      dataToDisplay = primaryWeapons;
-    } else if (selectedType === 'secondary') {
-      dataToDisplay = secondaryWeapons;
-    } else if (selectedType === 'gadgets') {
-      dataToDisplay = gadgets;
-    }
+    if (selectedType === 'primary') { dataToDisplay = primaryWeapons; } 
+    else if (selectedType === 'secondary') { dataToDisplay = secondaryWeapons; }
+    else if (selectedType === 'gadgets') { dataToDisplay = gadgets; }
     Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
-      // Dodaj główną kategorię jako nagłówek
       const mainOption = document.createElement('option');
       mainOption.textContent = mainCategory;
       mainOption.disabled = true;
       mainOption.className = 'option-main';
       select.appendChild(mainOption);
-  
-      // Podkategorie (np. DEFAULT / CUSTOM)
       Object.entries(subGroups).forEach(([subGroup, weapons]) => {
         const subOption = document.createElement('option');
         subOption.textContent = subGroup;
         subOption.disabled = true;
         subOption.className = 'option-sub';
         select.appendChild(subOption);
-  
-        // Broń
         weapons.forEach(weapon => {
           const weaponOption = document.createElement('option');
           weaponOption.textContent = weapon.name;
@@ -160,17 +146,12 @@
         });
       });
     });
-
-    // Obsługa wyboru
     select.addEventListener('change', () => {
       const chosen = select.value;
-      img.src = chosen || defaultImage;
+      img.src = chosen || defaultImage; 
     });
-
-
-    // Kliknięcie w obrazek = pokaż listę
-    img.addEventListener('click', () => {
-      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+    img.addEventListener('click', () => { 
+      select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none'; 
     });
   });
 </script>
