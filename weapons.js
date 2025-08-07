@@ -1,7 +1,7 @@
 const primaryWeapons = {
   "======== ASSAULT RIFLE ========": {
     " -- DEFAULT WEAPON -- ": [
-      { name: '416-C CARBINE', value: 'Weapons/416-C CARBINE.png' },
+      { name: '416-C CARBINeE', value: 'Weapons/416-C CARBINE.png' },
       { name: '552 COMMANDO', value: 'Weapons/552 COMMANDO.png' },
       { name: '556XI', value: 'Weapons/556XI.png' },
       { name: 'AK-12', value: 'Weapons/AK-12.png' },
