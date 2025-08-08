@@ -7,23 +7,23 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK5</a></p>
+  <p><a href="index.html">BACK1</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
-      <h2 class="title primary weapon">PRIMARY WEAPON</h2>
-      <select class="category-select" data-type="primary" style="display: none;"></select>
+      <h2 class="title primary">PRIMARY WEAPON</h2>
+      <select class="loadout-selector" data-type="primary" style="display: none;"></select>
     </div>
     <div class="section-triple">
-      <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
-      <select class="category-select" data-type="secondary" style="display: none;"></select>
+      <h2 class="title secondary">SECONDARY WEAPON</h2>
+      <select class="loadout-selector" data-type="secondaryWeapon"></select>
     </div>
     <div class="section-triple">
       <h2 class="title gadget">GADGET</h2>
-      <select class="category-select" data-type="gadget" style="display: none;"></select>
+      <select class="loadout-selector" data-type="gadget"></select>
     </div>
     <div class="section-triple">
-      <h2 class="title unique ability">UNIQUE ABILITY</h2>
+      <h2 class="title ability">UNIQUE ABILITY</h2>
     </div>
   </div>  
 
@@ -132,7 +132,7 @@
   populateWeaponSelects();
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
-  document.querySelectorAll('.category-select').forEach(categorySelect => {
+  document.querySelectorAll('.loadout-selector').forEach(categorySelect => {
     const type = categorySelect.dataset.type;
     const dataToDisplay = loadoutData[type];
 
@@ -191,7 +191,7 @@
 
       if (!type) return;
 
-      const select = document.querySelector(`select.category-select[data-type="${type}"]`);
+      const select = document.querySelector(`select.loadout-selector[data-type="${type}"]`);
       if (select) {
         const currentDisplay = window.getComputedStyle(select).display;
         select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
