@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -176,8 +176,8 @@
   // Kliknięcie w nagłówek pokazuje select dla kategorii
   document.querySelectorAll('h2.title').forEach(title => {
     title.addEventListener('click', () => {
-      const type = title.classList.contains('primary') ? 'primary' :
-                   title.classList.contains('secondary') ? 'secondary' :
+      const type = title.classList.contains('primaryWeapon') ? 'primaryWeapon' :
+                   title.classList.contains('secondaryWeapon') ? 'secondaryWeapon' :
                    title.classList.contains('gadget') ? 'gadget' : null;
 
       if (!type) return;
