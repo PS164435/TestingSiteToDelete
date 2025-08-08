@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK2</a></p>
+  <p><a href="index.html">BACK3</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -93,8 +93,11 @@
     document.querySelectorAll('select.weapon-select').forEach(select => {
       const dataToDisplay = loadoutData[select.dataset.type];
       if (!dataToDisplay) return;
-      select.innerHTML = '';
-      select.appendChild(new Option('------', ''));
+
+      const emptyOption = document.createElement('option');
+      emptyOption.textContent = '— Wybierz —';
+      emptyOption.value = '';
+      categorySelect.appendChild(emptyOption);
   
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         Object.entries(subGroups).forEach(([subGroup, weapons]) => {
