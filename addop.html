@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK2</a></p>
+  <p><a href="index.html">BACK3</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -89,10 +89,9 @@
 
   const defaultImage = 'Weapons/Empty.png';
 
-  function populateWeaponSelects() {
+  function fillLoadoutSelects() {
     document.querySelectorAll('select.weapon-select').forEach(select => {
-      const type = select.dataset.type;
-      const dataToDisplay = loadoutData[type];
+      const dataToDisplay = loadoutData[select.dataset.type];
       if (!dataToDisplay) return;
   
       const emptyOption = document.createElement('option');
@@ -120,7 +119,7 @@
   document.querySelectorAll('.loadout').forEach(img => {
     img.src = defaultImage;
   });
-  populateWeaponSelects();
+  fillLoadoutSelects();
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
   document.querySelectorAll('.category-select').forEach(categorySelect => {
