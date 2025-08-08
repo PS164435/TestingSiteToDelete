@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK7</a></p>
+  <p><a href="index.html">BACK8</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -91,7 +91,8 @@
 
   function fillLoadoutSelects() {
     document.querySelectorAll('select.weapon-select').forEach(select => {
-      const dataToDisplay = loadoutData[select.dataset.type];
+      const type = select.dataset.type;
+      const dataToDisplay = loadoutData[type];
       if (!dataToDisplay) return;
       select.innerHTML = '';
       select.appendChild(new Option('------', ''));
@@ -125,7 +126,7 @@
   document.querySelectorAll('.category-select').forEach(select => {
     const type = select.dataset.type;
     const dataToDisplay = loadoutData[type];
-
+    if (!dataToDisplay) return;
     select.innerHTML = '';
     select.appendChild(new Option('------', ''));
 
