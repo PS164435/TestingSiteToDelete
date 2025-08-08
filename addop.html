@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -114,9 +114,9 @@
   document.querySelectorAll('.category-select').forEach(categorySelect => {
     const type = categorySelect.dataset.type;
     const dataToDisplay = loadoutData[type];
-
+    
     select.innerHTML = '';
-    select.appendChild(new Option('------', ''));
+    categorySelect.appendChild(new Option('------', ''));
 
     Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
       const mainOption = document.createElement('option');
