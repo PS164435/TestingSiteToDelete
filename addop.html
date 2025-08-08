@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK4</a></p>
+  <p><a href="index.html">BACK3</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -15,8 +15,8 @@
       <select class="category-select" data-type="primaryWeapon" style="display: none;"></select>
     </div>
     <div class="section-triple">
-      <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
-      <select class="category-select" data-type="secondary" style="display: none;"></select>
+      <h2 class="title secondaryWeapon weapon">SECONDARY WEAPON</h2>
+      <select class="category-select" data-type="secondaryWeapon" style="display: none;"></select>
     </div>
     <div class="section-triple">
       <h2 class="title gadget">GADGET</h2>
@@ -31,7 +31,7 @@
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)" style="display: none;> </select>
         <img class="loadout" src="" alt="">
       </div>
 
@@ -48,24 +48,24 @@
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)" style="display: none;> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)" style="display: none;> </select>
         <img class="loadout" src="" alt="">
       </div>
 
@@ -75,7 +75,7 @@
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)" style="display: none;> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
@@ -92,7 +92,7 @@
   <script>
   const loadoutData = {
     primaryWeapon: primaryWeapons,
-    secondary: secondaryWeapons,
+    secondaryWeapon: secondaryWeapons,
     gadget: gadgets
   };
 
@@ -186,7 +186,7 @@
   document.querySelectorAll('h2.title').forEach(title => {
     title.addEventListener('click', () => {
       const type = title.classList.contains('primaryWeapon') ? 'primaryWeapon' :
-                   title.classList.contains('secondary') ? 'secondary' :
+                   title.classList.contains('secondaryWeapon') ? 'secondaryWeapon' :
                    title.classList.contains('gadget') ? 'gadget' : null;
 
       if (!type) return;
