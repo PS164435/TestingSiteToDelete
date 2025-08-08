@@ -7,92 +7,83 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK5</a></p>
+  <p><a href="index.html">BACK1</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
-      <h2 class="title primary weapon">PRIMARY WEAPON</h2>
-      <select class="category-select" data-type="primary" style="display: none;"></select>
+      <h2 class="title primaryWeapon">PRIMARY WEAPON</h2>
+      <select class="category-select" data-type="primaryWeapon" style="display: none;"></select>
     </div>
     <div class="section-triple">
-      <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
-      <select class="category-select" data-type="secondary" style="display: none;"></select>
+      <h2 class="title secondaryWeapon">SECONDARY WEAPON</h2>
+      <select class="category-select" data-type="secondaryWeapon" style="display: none;"></select>
     </div>
     <div class="section-triple">
       <h2 class="title gadget">GADGET</h2>
       <select class="category-select" data-type="gadget" style="display: none;"></select>
     </div>
     <div class="section-triple">
-      <h2 class="title unique ability">UNIQUE ABILITY</h2>
+      <h2 class="title uniqueAbility">UNIQUE ABILITY</h2>
     </div>
   </div>  
 
   <div class="triple-container">
-
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
-
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
-
     <div class="section-triple">
       <div class="grid-triple">
         <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
         <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
-
       <div class="grid-triple">
         <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
-
     <div class="section-triple">
       <div class="grid-triple">
         <select class="weapon-select" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
-
+  </div>
+  
   <script src="weapons.js"></script>
     
   <script>
   const loadoutData = {
-    primary: primaryWeapons,
-    secondary: secondaryWeapons,
+    primaryWeapon: primaryWeapons,
+    secondaryWeapon: secondaryWeapons,
     gadget: gadgets
   };
 
