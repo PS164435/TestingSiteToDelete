@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK8</a></p>
+  <p><a href="index.html">BACK9</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -95,7 +95,6 @@
       if (!dataToDisplay) return;
       select.innerHTML = '';
       select.appendChild(new Option('------', ''));
-  
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         Object.entries(subGroups).forEach(([subGroup, weapons]) => {
           weapons.forEach(weapon => {
@@ -108,42 +107,41 @@
       });
     });
   }
-
   fillLoadoutSelects();
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
-  document.querySelectorAll('.category-select').forEach(categorySelect => {
-    const type = categorySelect.dataset.type;
+  document.querySelectorAll('.category-select').forEach(select => {
+    const type = select.dataset.type;
     const dataToDisplay = loadoutData[type];
 
     const emptyOption = document.createElement('option');
     emptyOption.textContent = '— Wybierz —';
     emptyOption.value = '';
-    categorySelect.appendChild(emptyOption);
+    select.appendChild(emptyOption);
 
     Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
       const mainOption = document.createElement('option');
       mainOption.textContent = mainCategory;
       mainOption.disabled = true;
-      categorySelect.appendChild(mainOption);
+      select.appendChild(mainOption);
 
       Object.entries(subGroups).forEach(([subGroup, weapons]) => {
         const subOption = document.createElement('option');
         subOption.textContent = subGroup;
         subOption.disabled = true;
-        categorySelect.appendChild(subOption);
+        select.appendChild(subOption);
 
         weapons.forEach(weapon => {
           const opt = document.createElement('option');
           opt.textContent = weapon.name;
           opt.value = weapon.value;
-          categorySelect.appendChild(opt);
+          select.appendChild(opt);
         });
       });
     });
 
-    categorySelect.addEventListener('change', () => {
-      const chosen = categorySelect.value;
+    select.addEventListener('change', () => {
+      const chosen = select.value;
       if (!chosen) return;
 
       // znajdź pierwszy wolny slot dla tej kategorii
@@ -157,8 +155,8 @@
         }
       }
 
-      categorySelect.value = ''; // zresetuj select
-      categorySelect.style.display = 'none'; // schowaj po wyborze
+      select.value = ''; // zresetuj select
+      select.style.display = 'none'; // schowaj po wyborze
     });
   });
 
