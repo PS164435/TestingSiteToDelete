@@ -7,20 +7,20 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK5</a></p>
+  <p><a href="index.html">BACK4</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
       <h2 class="title primary weapon">PRIMARY WEAPON</h2>
-      <select class="category-select" data-type="primary" style="display: none;"></select>
+      <select class="loadout-category-selector" data-type="primary" style="display: none;"></select>
     </div>
     <div class="section-triple">
       <h2 class="title secondary weapon">SECONDARY WEAPON</h2>
-      <select class="category-select" data-type="secondary" style="display: none;"></select>
+      <select class="loadout-category-selector" data-type="secondary" style="display: none;"></select>
     </div>
     <div class="section-triple">
       <h2 class="title gadget">GADGET</h2>
-      <select class="category-select" data-type="gadget" style="display: none;"></select>
+      <select class="loadout-category-selector" data-type="gadget" style="display: none;"></select>
     </div>
     <div class="section-triple">
       <h2 class="title unique ability">UNIQUE ABILITY</h2>
@@ -31,58 +31,58 @@
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="primary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="primary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primary" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-    </div>
-
-    <div class="section-triple">
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondary" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="primary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="secondary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="secondary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
 
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="secondary" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
 
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" onchange="selectLoadout(this)"> </select>
+        <select class="loadout-weapon-selector" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+
+      <div class="grid-triple">
+        <select class="loadout-weapon-selector" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+
+      <div class="grid-triple">
+        <select class="loadout-weapon-selector" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+    </div>
+
+    <div class="section-triple">
+      <div class="grid-triple">
+        <select class="loadout-weapon-selector" onchange="selectLoadout(this)"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
@@ -99,7 +99,7 @@
   const defaultImage = 'Weapons/Empty.png';
 
   function populateWeaponSelects() {
-    document.querySelectorAll('select.weapon-select').forEach(select => {
+    document.querySelectorAll('select.loadout-weapon-selector').forEach(select => {
       const type = select.dataset.type;
       const dataToDisplay = loadoutData[type];
       if (!dataToDisplay) return;
@@ -122,7 +122,7 @@
     });
   }
 
-  document.querySelectorAll('select.weapon-select').forEach(select => {
+  document.querySelectorAll('select.loadout-weapon-selector').forEach(select => {
     select.style.display = 'none'; // ukryj wszystkie slotowe selecty
   });
 
@@ -132,7 +132,7 @@
   populateWeaponSelects();
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
-  document.querySelectorAll('.category-select').forEach(categorySelect => {
+  document.querySelectorAll('.loadout-category-selector').forEach(categorySelect => {
     const type = categorySelect.dataset.type;
     const dataToDisplay = loadoutData[type];
 
@@ -167,7 +167,7 @@
       if (!chosen) return;
 
       // znajdź pierwszy wolny slot dla tej kategorii
-      const slots = document.querySelectorAll(`.section-triple select.weapon-select[data-type="${type}"]`);
+      const slots = document.querySelectorAll(`.section-triple select.loadout-weapon-selector[data-type="${type}"]`);
       for (const select of slots) {
         const img = select.nextElementSibling;
        if (!img.getAttribute("src") || img.getAttribute("src").endsWith('Empty.png')) {
@@ -191,7 +191,7 @@
 
       if (!type) return;
 
-      const select = document.querySelector(`select.category-select[data-type="${type}"]`);
+      const select = document.querySelector(`select.loadout-category-selector[data-type="${type}"]`);
       if (select) {
         const currentDisplay = window.getComputedStyle(select).display;
         select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
