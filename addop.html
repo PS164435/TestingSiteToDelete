@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK3</a></p>
+  <p><a href="index.html">BACK4</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -168,7 +168,8 @@
 
       const select = document.querySelector(`select.category-select[data-type="${type}"]`);
       if (select) {
-        select.style.display = (select.style.display === 'none') ? 'block' : 'none';
+        const currentDisplay = window.getComputedStyle(select).display;
+        select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
       }
     });
   });
@@ -178,7 +179,8 @@
     img.addEventListener('click', () => {
       const select = img.previousElementSibling;
       if (select && select.tagName === 'SELECT') {
-        select.style.display = (select.style.display === 'none' || !select.style.display) ? 'block' : 'none';
+        const currentDisplay = window.getComputedStyle(select).display;
+        select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
       }
     });
   });
