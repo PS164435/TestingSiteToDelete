@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK9</a></p>
+  <p><a href="index.html">BACK10</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -96,19 +96,16 @@
       if (!dataToDisplay) return;
       select.innerHTML = '';
       select.appendChild(new Option('------', ''));
-  
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         const mainOption = document.createElement('option');
         mainOption.textContent = mainCategory;
         mainOption.disabled = true;
         select.appendChild(mainOption);
-  
         Object.entries(subGroups).forEach(([subGroup, weapons]) => {
           const subOption = document.createElement('option');
           subOption.textContent = subGroup;
           subOption.disabled = true;
           select.appendChild(subOption);
-  
           weapons.forEach(weapon => {
             const opt = document.createElement('option');
             opt.textContent = weapon.name;
@@ -117,9 +114,9 @@
           });
         });
       });
-      
     });
   }
+    
   fillLoadoutSelects('select.weapon-select');
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
