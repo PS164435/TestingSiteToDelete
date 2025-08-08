@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK17</a></p>
+  <p><a href="index.html">BACK18</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -30,43 +30,43 @@
   <div class="triple-container">
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon"> </select>
         <img class="loadout" src="" alt="">
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon"> </select>
         <img class="loadout" src="" alt="">
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-type="primaryWeapon" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-    </div>
-    <div class="section-triple">
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
-        <img class="loadout" src="" alt="">
-      </div>
-      <div class="grid-triple">
-        <select class="weapon-select" data-type="secondaryWeapon" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="primaryWeapon"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
     <div class="section-triple">
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon"> </select>
         <img class="loadout" src="" alt="">
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon"> </select>
         <img class="loadout" src="" alt="">
       </div>
       <div class="grid-triple">
-        <select class="weapon-select" data-type="gadget" onchange="selectLoadout(this)"> </select>
+        <select class="weapon-select" data-type="secondaryWeapon"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+    </div>
+    <div class="section-triple">
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadget"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadget"> </select>
+        <img class="loadout" src="" alt="">
+      </div>
+      <div class="grid-triple">
+        <select class="weapon-select" data-type="gadget"> </select>
         <img class="loadout" src="" alt="">
       </div>
     </div>
@@ -131,6 +131,14 @@
           select.style.display = 'none'; // schowaj po wyborze
         }); 
       }
+      else if (selectType === 'select.weapon-select') {
+        select.addEventListener('change', () => {
+          const img = select.nextElementSibling;
+          if (img) {
+            img.src = select.value || defaultImage;
+          }
+        });
+      }
     });
   }
 
@@ -162,16 +170,6 @@
       }
     });
   });
-
-  // Slotowy select (selectLoadout) - przypisuje broń i obrazek
-  function selectLoadout(select) {
-    const img = select.nextElementSibling;
-    if (img) {
-      img.src = select.value || defaultImage;
-    }
-  }
-
-  window.selectLoadout = selectLoadout;
 </script>
 
 </body>
