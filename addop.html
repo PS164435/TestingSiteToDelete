@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK10</a></p>
+  <p><a href="index.html">BACK11</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -110,32 +110,36 @@
   fillLoadoutSelects();
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
-  document.querySelectorAll('.category-select').forEach(select => {
-    const dataToDisplay = loadoutData[select.dataset.type];
-    if (!dataToDisplay) return;
-    select.innerHTML = '';
-    select.appendChild(new Option('------', ''));
+  document.querySelectorAll('.category-select').forEach(categorySelect => {
+    const type = categorySelect.dataset.type;
+    const dataToDisplay = loadoutData[type];
+
+    const emptyOption = document.createElement('option');
+    emptyOption.textContent = '— Wybierz —';
+    emptyOption.value = '';
+    categorySelect.appendChild(emptyOption);
 
     Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
       const mainOption = document.createElement('option');
       mainOption.textContent = mainCategory;
       mainOption.disabled = true;
-      select.appendChild(mainOption);
+      categorySelect.appendChild(mainOption);
 
       Object.entries(subGroups).forEach(([subGroup, weapons]) => {
         const subOption = document.createElement('option');
         subOption.textContent = subGroup;
         subOption.disabled = true;
-        select.appendChild(subOption);
+        categorySelect.appendChild(subOption);
 
         weapons.forEach(weapon => {
           const opt = document.createElement('option');
           opt.textContent = weapon.name;
           opt.value = weapon.value;
-          select.appendChild(opt);
+          categorySelect.appendChild(opt);
         });
       });
     });
+
 
     select.addEventListener('change', () => {
       const chosen = select.value;
