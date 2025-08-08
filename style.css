@@ -98,17 +98,6 @@ body {
   transform: scale(1.1);
 }
 
-.weapon-select {
-  position: absolute;
-  top: 0;
-  left: 3%;
-  width: 94%;
-  height: 100%;
-  opacity: 0;
-  z-index: 2;
-  cursor: pointer;
-}
-
 .loadout {
   max-height: 180px;
   width: 94%;
