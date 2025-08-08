@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK13</a></p>
+  <p><a href="index.html">BACK15</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -89,7 +89,7 @@
 
   const defaultImage = 'Weapons/Empty.png';
 
-  function fillLoadoutSelects(selectType = 'select.weapon-select') {
+  function fillLoadoutSelects(selectType) {
     document.querySelectorAll(selectType).forEach(select => {
       const type = select.dataset.type;
       const dataToDisplay = loadoutData[type];
@@ -114,60 +114,28 @@
           });
         });
       });
-    });
-  }
-    
-  fillLoadoutSelects('select.weapon-select');
-
-  function fillLoadoutSelects2(selectType = 'select.category-select') {
-    document.querySelectorAll(selectType).forEach(select => {
-      const type = select.dataset.type;
-      const dataToDisplay = loadoutData[type];
-      if (!dataToDisplay) return;
-      select.innerHTML = '';
-      select.appendChild(new Option('------', ''));
-      Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
-        const mainOption = document.createElement('option');
-        mainOption.textContent = mainCategory;
-        mainOption.disabled = true;
-        select.appendChild(mainOption);
-        Object.entries(subGroups).forEach(([subGroup, weapons]) => {
-          const subOption = document.createElement('option');
-          subOption.textContent = subGroup;
-          subOption.disabled = true;
-          select.appendChild(subOption);
-          weapons.forEach(weapon => {
-            const opt = document.createElement('option');
-            opt.textContent = weapon.name;
-            opt.value = weapon.value;
-            select.appendChild(opt);
-          });
-        });
-      });
-  
-      select.addEventListener('change', () => {
-        const chosen = select.value;
-        if (!chosen) return;
-        const slots = document.querySelectorAll(`.section-triple select.weapon-select[data-type="${type}"]`);
-        for (const select of slots) {
-          const img = select.nextElementSibling;
-         if (!img.getAttribute("src") || img.getAttribute("src").endsWith('Empty.png')) {
-            select.value = chosen;
-            img.src = chosen;
-            break;
+      if (selectType === 'select.category-select'){
+        select.addEventListener('change', () => {
+          const chosen = select.value;
+          if (!chosen) return;
+          const slots = document.querySelectorAll(`.section-triple select.weapon-select[data-type="${type}"]`);
+          for (const slotSelect of slots) {
+            const img = slotSelect.nextElementSibling;
+           if (!img.getAttribute("src") || img.getAttribute("src").endsWith('Empty.png')) {
+              slotSelect.value = chosen;
+              img.src = chosen;
+              break;
+            }
           }
-        }
-        select.value = ''; // zresetuj select
-        select.style.display = 'none'; // schowaj po wyborze
-      });
-      
+          select.value = ''; // zresetuj select
+          select.style.display = 'none'; // schowaj po wyborze
+        }); 
+      }
     });
   }
 
-  fillLoadoutSelects2('select.category-select');
-
-
-
+  fillLoadoutSelects('select.weapon-select');
+  fillLoadoutSelects('select.category-select');
     
   // Kliknięcie w nagłówek pokazuje select dla kategorii
   document.querySelectorAll('h2.title').forEach(title => {
@@ -175,9 +143,7 @@
       const type = title.classList.contains('primaryWeapon') ? 'primaryWeapon' :
                    title.classList.contains('secondaryWeapon') ? 'secondaryWeapon' :
                    title.classList.contains('gadget') ? 'gadget' : null;
-
       if (!type) return;
-
       const select = document.querySelector(`select.category-select[data-type="${type}"]`);
       if (select) {
         const currentDisplay = window.getComputedStyle(select).display;
