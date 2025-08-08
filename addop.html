@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK9</a></p>
+  <p><a href="index.html">BACK10</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -111,13 +111,10 @@
 
   // Inicjalizacja kategorii (np. select pod "PRIMARY WEAPON")
   document.querySelectorAll('.category-select').forEach(select => {
-    const type = select.dataset.type;
-    const dataToDisplay = loadoutData[type];
-
-    const emptyOption = document.createElement('option');
-    emptyOption.textContent = '— Wybierz —';
-    emptyOption.value = '';
-    select.appendChild(emptyOption);
+    const dataToDisplay = loadoutData[select.dataset.type];
+    if (!dataToDisplay) return;
+    select.innerHTML = '';
+    select.appendChild(new Option('------', ''));
 
     Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
       const mainOption = document.createElement('option');
