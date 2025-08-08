@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK11</a></p>
+  <p><a href="index.html">BACK</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -95,6 +95,7 @@
       if (!dataToDisplay) return;
       select.innerHTML = '';
       select.appendChild(new Option('------', ''));
+  
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         Object.entries(subGroups).forEach(([subGroup, weapons]) => {
           weapons.forEach(weapon => {
@@ -140,9 +141,8 @@
       });
     });
 
-
-    select.addEventListener('change', () => {
-      const chosen = select.value;
+    categorySelect.addEventListener('change', () => {
+      const chosen = categorySelect.value;
       if (!chosen) return;
 
       // znajdź pierwszy wolny slot dla tej kategorii
@@ -156,8 +156,8 @@
         }
       }
 
-      select.value = ''; // zresetuj select
-      select.style.display = 'none'; // schowaj po wyborze
+      categorySelect.value = ''; // zresetuj select
+      categorySelect.style.display = 'none'; // schowaj po wyborze
     });
   });
 
