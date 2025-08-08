@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK5</a></p>
+  <p><a href="index.html">BACK6</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -89,22 +89,22 @@
 
   const defaultImage = 'Weapons/Empty.png';
 
-  function extractWeapons(data) {
-    return Object.values(data).flatMap(subGroups =>
-      Object.values(subGroups).flat()
-    );
-  }
-  
   function fillLoadoutSelects() {
     document.querySelectorAll('select.weapon-select').forEach(select => {
-      const data = loadoutData[select.dataset.type];
-      if (!data) return;
-  
+      const dataToDisplay = loadoutData[select.dataset.type];
+      if (!dataToDisplay) return;
       select.innerHTML = '';
       select.appendChild(new Option('------', ''));
   
-      extractWeapons(data).forEach(weapon => {
-        select.appendChild(new Option(weapon.name, weapon.value));
+      Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
+        Object.entries(subGroups).forEach(([subGroup, weapons]) => {
+          weapons.forEach(weapon => {
+            const opt = document.createElement('option');
+            opt.textContent = weapon.name;
+            opt.value = weapon.value;
+            select.appendChild(opt);
+          });
+        });
       });
     });
   }
