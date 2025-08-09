@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK21</a></p>
+  <p><a href="index.html">BACK22</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -144,22 +144,6 @@
 
   fillLoadoutSelects('select.weapon-select');
   fillLoadoutSelects('select.category-select');
-
-  function toggleSelect(element, relation) {
-    
-    const select = element[relation];
-    if (select && select.tagName === 'SELECT') {
-      const currentDisplay = window.getComputedStyle(select).display;
-      select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
-    }
-    
-  }
-  document.querySelectorAll('h2.title').forEach(title => {
-    title.addEventListener('click', () => toggleSelect(title, 'nextElementSibling'));
-  });
-  document.querySelectorAll('.loadout').forEach(img => {
-    img.addEventListener('click', () => toggleSelect(img, 'previousElementSibling'));
-  });
 
   function toggleSelect(clickPoint, relation) {
     document.querySelectorAll(clickPoint).forEach(element => {
