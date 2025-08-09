@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK19</a></p>
+  <p><a href="index.html">BACK20</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -144,28 +144,22 @@
 
   fillLoadoutSelects('select.weapon-select');
   fillLoadoutSelects('select.category-select');
-    
-  // Kliknięcie w nagłówek pokazuje select dla kategorii
-  document.querySelectorAll('h2.title').forEach(title => {
-    title.addEventListener('click', () => {
-      const select = title.nextElementSibling;
-      if (select && select.tagName === 'SELECT') {
-        const currentDisplay = window.getComputedStyle(select).display;
-        select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
-        }
-    });
-  });
 
-  // Kliknięcie w obrazek — pokaż powiązany select slotu
-  document.querySelectorAll('.loadout').forEach(img => {
-    img.addEventListener('click', () => {
-      const select = img.previousElementSibling;
-      if (select && select.tagName === 'SELECT') {
-        const currentDisplay = window.getComputedStyle(select).display;
-        select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
-      }
-    });
+  function toggleSelect(element, relation) {
+    const select = element[relation];
+    if (select && select.tagName === 'SELECT') {
+      const currentDisplay = window.getComputedStyle(select).display;
+      select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
+    }
+  }
+  document.querySelectorAll('h2.title').forEach(title => {
+    title.addEventListener('click', () => toggleSelect(title, 'nextElementSibling'));
   });
+  document.querySelectorAll('.loadout').forEach(img => {
+    img.addEventListener('click', () => toggleSelect(img, 'previousElementSibling'));
+  });
+  
+    
 </script>
 
 </body>
