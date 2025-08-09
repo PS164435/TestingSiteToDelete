@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK18</a></p>
+  <p><a href="index.html">BACK19</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -148,15 +148,11 @@
   // Kliknięcie w nagłówek pokazuje select dla kategorii
   document.querySelectorAll('h2.title').forEach(title => {
     title.addEventListener('click', () => {
-      const type = title.classList.contains('primaryWeapon') ? 'primaryWeapon' :
-                   title.classList.contains('secondaryWeapon') ? 'secondaryWeapon' :
-                   title.classList.contains('gadget') ? 'gadget' : null;
-      if (!type) return;
-      const select = document.querySelector(`select.category-select[data-type="${type}"]`);
-      if (select) {
+      const select = title.nextElementSibling;
+      if (select && select.tagName === 'SELECT') {
         const currentDisplay = window.getComputedStyle(select).display;
         select.style.display = (currentDisplay === 'none') ? 'block' : 'none';
-      }
+        }
     });
   });
 
