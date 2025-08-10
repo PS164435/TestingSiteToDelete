@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK2</a></p>
+  <p><a href="index.html">BACK3</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -78,49 +78,7 @@
     </div>
   </div>
 
-  
-<form id="operatorForm">
-  <!-- CODENAME -->
-  <div class="form-group">
-    <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
-  </div>
-  <!-- SIDE -->
-  <div class="form-group">
-    <label for="sideSelect">SIDE:</label>
-    <select id="sideSelect" name="side">
-      <option value="">-- Wybierz stronę --</option>
-      <option value="attacker">ATTACKER</option>
-      <option value="defender">DEFENDER</option>
-    </select>
-    <img id="sideImg" class="image-preview" src="" alt="" />
-  </div>
-  <!-- SQUAD -->
-  <div class="form-group">
-    <label for="squadSelect">SQUAD:</label>
-    <select id="squadSelect" name="squad">
-      <option value="">-- Wybierz drużynę --</option>
-      <option value="alpha">Alpha</option>
-      <option value="bravo">Bravo</option>
-      <option value="charlie">Charlie</option>
-      <option value="delta">Delta</option>
-      <option value="echo">Echo</option>
-      <option value="foxtrot">Foxtrot</option>
-    </select>
-    <img id="squadImg" class="image-preview" src="" alt="" />
-  </div>
-  <!-- SPECIALTY -->
-  <div class="form-group specialty-list">
-    <label>SPECIALTY (max 2):</label>
-    <label><input type="checkbox" name="specialty" value="Sniper"> Sniper</label>
-    <label><input type="checkbox" name="specialty" value="Medic"> Medic</label>
-    <label><input type="checkbox" name="specialty" value="Engineer"> Engineer</label>
-    <label><input type="checkbox" name="specialty" value="Recon"> Recon</label>
-    <label><input type="checkbox" name="specialty" value="Demolition"> Demolition</label>
-    <label><input type="checkbox" name="specialty" value="Support"> Support</label>
-    <span id="specialtySummary" class="specialty-summary">Brak wybranych</span>
-  </div>
-</form>
-
+  <script src="weapons.js"></script>
   <script src="operatorLoadout.js"></script>
 
 </body>
