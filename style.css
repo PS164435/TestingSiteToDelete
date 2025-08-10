@@ -158,3 +158,18 @@ select option.option-empty {
   gap: 10px;
   cursor: pointer;
 }
+
+#side {
+  border: none;            /* usuwa ramkę */
+  background: none;        /* brak tła */
+  font: inherit;           /* dziedziczy czcionkę jak w napisie */
+  padding: 0;              /* brak wcięć */
+  appearance: none;        /* ukrywa strzałkę w nowoczesnych przeglądarkach */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;         /* żeby było wiadomo, że da się kliknąć */
+}
+
+#side:focus {
+  outline: none;           /* usuwa podświetlenie po kliknięciu */
+}
