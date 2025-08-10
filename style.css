@@ -147,7 +147,7 @@ select option.option-weapon {
   color: white;
 }
 
-select option:first-child {
+select option.option-empty {
   background-color: #C46D5A;
   color: white;
 }
