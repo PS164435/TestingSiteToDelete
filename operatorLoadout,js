@@ -1,7 +1,4 @@
-<script src="weapons.js"></script>
-    
-  <script>
-  const loadoutData = {
+const loadoutData = {
     primaryWeapon: primaryWeapons,
     secondaryWeapon: secondaryWeapons,
     gadget: gadgets
@@ -80,5 +77,3 @@
   }
   toggleSelect("h2.title", "nextElementSibling");
   toggleSelect(".loadout", "previousElementSibling");
-    
-</script>
