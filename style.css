@@ -138,3 +138,8 @@ select option.option-weapon {
   background-color: #4C756A;
   color: white;
 }
+
+select option:first-child {
+  background-color: #C46D5A;
+  color: white;
+}
