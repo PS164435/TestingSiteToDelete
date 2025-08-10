@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -95,7 +95,7 @@
       const dataToDisplay = loadoutData[type];
       if (!dataToDisplay) return;
       select.innerHTML = '';
-      select.appendChild(new Option('------', ''));
+      select.appendChild(new Option('------', 'Empty.png'));
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         const mainOption = document.createElement('option');
         mainOption.textContent = mainCategory;
