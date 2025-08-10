@@ -85,6 +85,12 @@
     <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
   </div>
 
+  <div id="side-container">
+    <span id="side-label">SIDE</span>
+    <img id="side-image" src="" alt="" style="width:50px; height:50px; display:none;">
+    <span id="side-text"></span>
+  </div>
+
   <script>
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -96,10 +102,9 @@
       input.id = 'codename-input';
       codenameSpan.replaceWith(input);
       input.focus();
-  
       function save() {
         if (input.value.trim() === '') {
-          input.value = 'CODENAME'; // domyślna wartość, jeśli nic nie wpisano
+          input.value = 'CODENAME';
         }
         codenameSpan.textContent = input.value.trim();
         input.replaceWith(codenameSpan);
@@ -116,6 +121,56 @@
       });
     });
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sideLabel = document.getElementById('side-label');
+  const sideImage = document.getElementById('side-image');
+  const sideText = document.getElementById('side-text');
+
+  sideLabel.addEventListener('click', () => {
+    // Tworzymy select z opcjami
+    const select = document.createElement('select');
+    select.innerHTML = `
+      <option value="">-- wybierz --</option>
+      <option value="ATTACKER">ATTACKER</option>
+      <option value="DEFENDER">DEFENDER</option>
+    `;
+
+    // Wstawiamy select zamiast napisu SIDE
+    sideLabel.replaceWith(select);
+    select.focus();
+
+    // Obsługa zmiany opcji
+    select.addEventListener('change', () => {
+      const value = select.value;
+
+      if (value === 'ATTACKER') {
+        sideImage.src = 'attacker.png'; // tu podmienisz na prawdziwy obrazek
+        sideImage.style.display = 'inline';
+        sideText.textContent = 'ATTACKER';
+      } 
+      else if (value === 'DEFENDER') {
+        sideImage.src = 'defender.png';
+        sideImage.style.display = 'inline';
+        sideText.textContent = 'DEFENDER';
+      } 
+      else {
+        sideImage.src = '';
+        sideImage.style.display = 'none';
+        sideText.textContent = '';
+      }
+
+      // Zamiana select z powrotem na napis SIDE
+      select.replaceWith(sideLabel);
+    });
+
+    // Jeśli select straci fokus bez wyboru → wraca SIDE
+    select.addEventListener('blur', () => {
+      select.replaceWith(sideLabel);
+    });
+  });
+});
+  
 
 
 
