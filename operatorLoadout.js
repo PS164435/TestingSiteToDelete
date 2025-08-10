@@ -12,7 +12,9 @@ const loadoutData = {
       const dataToDisplay = loadoutData[type];
       if (!dataToDisplay) return;
       select.innerHTML = '';
-      select.appendChild(new Option('------', ''));
+      const emptyOption = new Option('------', '');
+      emptyOption.classList.add('option-empty'); // nowa klasa
+      select.appendChild(emptyOption);
       Object.entries(dataToDisplay).forEach(([mainCategory, subGroups]) => {
         const mainOption = document.createElement('option');
         mainOption.textContent = mainCategory;
