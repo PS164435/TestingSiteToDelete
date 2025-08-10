@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK6</a></p>
+  <p><a href="index.html">BACK7</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -81,17 +81,18 @@
   <script src="weapons.js"></script>
   <script src="operatorLoadout.js"></script>
 
-  // codename
+  <!-- codename -->
   <div class="form-group">
     <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
   </div>
 
-  /* side
+  <!-- side 
   <div id="side-container">
     <span id="side-label">SIDE</span>
     <img id="side-image" src="" alt="" style="width:50px; height:50px; display:none;">
     <span id="side-text"></span>
   </div>
+  -->
 
 
   <div id="side-container">
@@ -104,7 +105,6 @@
     <img id="side-image" src="" style="width:50px; height:50px; display:none;">
     <span id="side-text"></span>
   </div>
-  */
 
   <script>
 
@@ -151,11 +151,9 @@
       `;
       sideLabel.replaceWith(select);
       select.focus();
-  
       // Obsługa zmiany opcji
       select.addEventListener('change', () => {
         const value = select.value;
-  
         if (value === 'ATTACKER') {
           sideImage.src = 'attacker.png'; // tu podmienisz na prawdziwy obrazek
           sideImage.style.display = 'inline';
@@ -171,18 +169,38 @@
           sideImage.style.display = 'none';
           sideText.textContent = '';
         }
-  
         // Zamiana select z powrotem na napis SIDE
         select.replaceWith(sideLabel);
       });
-  
       // Jeśli select straci fokus bez wyboru → wraca SIDE
       select.addEventListener('blur', () => {
         select.replaceWith(sideLabel);
       });
     });
   });
-  
+
+  const sideLabel = document.getElementById('side-label');
+  const sideSelect = document.getElementById('side-select');
+  const sideImage = document.getElementById('side-image');
+  const sideText = document.getElementById('side-text');
+  sideLabel.addEventListener('click', () => {
+    sideSelect.style.display = 'inline';
+    sideSelect.focus();
+    sideSelect.click(); // od razu rozwija
+  });
+  sideSelect.addEventListener('change', () => {
+    const value = sideSelect.value;
+    if (value === 'ATTACKER') {
+      sideImage.src = 'attacker.png';
+      sideImage.style.display = 'inline';
+      sideText.textContent = 'ATTACKER';
+    } else if (value === 'DEFENDER') {
+      sideImage.src = 'defender.png';
+      sideImage.style.display = 'inline';
+      sideText.textContent = 'DEFENDER';
+    }
+    sideSelect.style.display = 'none';
+  });
 
 
 
