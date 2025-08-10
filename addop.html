@@ -88,37 +88,36 @@
   <script>
 
   document.addEventListener('DOMContentLoaded', () => {
-  const codenameSpan = document.getElementById('codename');
-
-  codenameSpan.addEventListener('click', () => {
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = codenameSpan.textContent;
-    input.id = 'codename-input';
-    input.style.minWidth = '120px';
-
-    codenameSpan.replaceWith(input);
-    input.focus();
-
-    function save() {
-      if (input.value.trim() === '') {
-        input.value = 'CODENAME'; // domyślna wartość, jeśli nic nie wpisano
-      }
-      codenameSpan.textContent = input.value.trim();
-      input.replaceWith(codenameSpan);
-    }
-
-    input.addEventListener('blur', save);
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        save();
-      }
-      if (e.key === 'Escape') {
+    const codenameSpan = document.getElementById('codename');
+  
+    codenameSpan.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = codenameSpan.textContent;
+      input.id = 'codename-input';
+  
+      codenameSpan.replaceWith(input);
+      input.focus();
+  
+      function save() {
+        if (input.value.trim() === '') {
+          input.value = 'CODENAME'; // domyślna wartość, jeśli nic nie wpisano
+        }
+        codenameSpan.textContent = input.value.trim();
         input.replaceWith(codenameSpan);
       }
+  
+      input.addEventListener('blur', save);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          save();
+        }
+        if (e.key === 'Escape') {
+          input.replaceWith(codenameSpan);
+        }
+      });
     });
   });
-});
 
 
 
