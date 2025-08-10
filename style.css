@@ -124,10 +124,9 @@ body {
 }
 
 .loadout[src$="Empty.png"] {
-  max-height: 0px;
-  border: 1px solid blue;
-  background: transparent;
-  pointer-events: none; /* brak klikania */
+  margin: 0px;
+  border: none;
+  pointer-events: none;
 }
 
  select option.option-main {
