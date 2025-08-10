@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK7</a></p>
+  <p><a href="index.html">BACK8</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -138,47 +138,6 @@
   });
 
   // SIDE
-  document.addEventListener('DOMContentLoaded', () => {
-    const sideLabel = document.getElementById('side-label');
-    const sideImage = document.getElementById('side-image');
-    const sideText = document.getElementById('side-text');
-    sideLabel.addEventListener('click', () => {
-      const select = document.createElement('select');
-      select.innerHTML = `
-        <option value="">-- wybierz --</option>
-        <option value="ATTACKER">ATTACKER</option>
-        <option value="DEFENDER">DEFENDER</option>
-      `;
-      sideLabel.replaceWith(select);
-      select.focus();
-      // Obsługa zmiany opcji
-      select.addEventListener('change', () => {
-        const value = select.value;
-        if (value === 'ATTACKER') {
-          sideImage.src = 'attacker.png'; // tu podmienisz na prawdziwy obrazek
-          sideImage.style.display = 'inline';
-          sideText.textContent = 'ATTACKER';
-        } 
-        else if (value === 'DEFENDER') {
-          sideImage.src = 'defender.png';
-          sideImage.style.display = 'inline';
-          sideText.textContent = 'DEFENDER';
-        } 
-        else {
-          sideImage.src = '';
-          sideImage.style.display = 'none';
-          sideText.textContent = '';
-        }
-        // Zamiana select z powrotem na napis SIDE
-        select.replaceWith(sideLabel);
-      });
-      // Jeśli select straci fokus bez wyboru → wraca SIDE
-      select.addEventListener('blur', () => {
-        select.replaceWith(sideLabel);
-      });
-    });
-  });
-
   const sideLabel = document.getElementById('side-label');
   const sideSelect = document.getElementById('side-select');
   const sideImage = document.getElementById('side-image');
