@@ -89,8 +89,8 @@
     <label for="sideSelect">SIDE:</label>
     <select id="sideSelect" name="side">
       <option value="">-- Wybierz stronę --</option>
-      <option value="blue">Blue Team</option>
-      <option value="red">Red Team</option>
+      <option value="attacker">ATTACKER</option>
+      <option value="defender">DEFENDER</option>
     </select>
     <img id="sideImg" class="image-preview" src="" alt="" />
   </div>
@@ -121,90 +121,7 @@
   </div>
 </form>
 
-<script>
-  // CODENAME edycja
-  const codenameEl = document.getElementById('codename');
-  codenameEl.addEventListener('click', () => {
-    if (codenameEl.classList.contains('editing')) return;
-
-    const currentText = codenameEl.textContent === "Kliknij, aby edytować" ? "" : codenameEl.textContent;
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = currentText;
-    input.style.width = '200px';
-
-    codenameEl.innerHTML = '';
-    codenameEl.appendChild(input);
-    codenameEl.classList.add('editing');
-    input.focus();
-
-    input.addEventListener('blur', () => {
-      let val = input.value.trim();
-      if (val === '') val = 'Kliknij, aby edytować';
-      codenameEl.textContent = val;
-      codenameEl.classList.remove('editing');
-    });
-
-    input.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        input.blur();
-      }
-    });
-  });
-
-  // SIDE obrazki (zastąp linki swoimi)
-  const sideSelect = document.getElementById('sideSelect');
-  const sideImg = document.getElementById('sideImg');
-  const sideImages = {
-    blue: 'https://via.placeholder.com/40x40/0000FF/FFFFFF?text=B',
-    red: 'https://via.placeholder.com/40x40/FF0000/FFFFFF?text=R'
-  };
-  sideSelect.addEventListener('change', () => {
-    const val = sideSelect.value;
-    sideImg.src = sideImages[val] || '';
-  });
-
-  // SQUAD obrazki (zastąp linki swoimi)
-  const squadSelect = document.getElementById('squadSelect');
-  const squadImg = document.getElementById('squadImg');
-  const squadImages = {
-    alpha: 'https://via.placeholder.com/40x40/AAAAAA/000000?text=A',
-    bravo: 'https://via.placeholder.com/40x40/BBBBBB/000000?text=B',
-    charlie: 'https://via.placeholder.com/40x40/CCCCCC/000000?text=C',
-    delta: 'https://via.placeholder.com/40x40/DDDDDD/000000?text=D',
-    echo: 'https://via.placeholder.com/40x40/EEEEEE/000000?text=E',
-    foxtrot: 'https://via.placeholder.com/40x40/FFFF00/000000?text=F'
-  };
-  squadSelect.addEventListener('change', () => {
-    const val = squadSelect.value;
-    squadImg.src = squadImages[val] || '';
-  });
-
-  // SPECIALTY max 2 i podsumowanie
-  const specialtyCheckboxes = document.querySelectorAll('input[name="specialty"]');
-  const specialtySummary = document.getElementById('specialtySummary');
-
-  specialtyCheckboxes.forEach(chk => {
-    chk.addEventListener('change', () => {
-      const checked = [...specialtyCheckboxes].filter(c => c.checked);
-
-      // limit 2
-      if (checked.length > 2) {
-        chk.checked = false;
-        return alert('Możesz wybrać maksymalnie 2 specialty');
-      }
-
-      // aktualizacja podsumowania
-      if (checked.length === 0) {
-        specialtySummary.textContent = 'Brak wybranych';
-      } else {
-        specialtySummary.textContent = checked.map(c => c.value).join(', ');
-      }
-    });
-  });
-</script>
-
-
+  
   
   <script src="weapons.js"></script>
     
