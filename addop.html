@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK4</a></p>
+  <p><a href="index.html">BACK5</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -130,11 +130,10 @@
     sideLabel.addEventListener('click', () => {
       const select = document.createElement('select');
       select.innerHTML = `
+        <option value="">-- wybierz --</option>
         <option value="ATTACKER">ATTACKER</option>
         <option value="DEFENDER">DEFENDER</option>
       `;
-  
-      // Wstawiamy select zamiast napisu SIDE
       sideLabel.replaceWith(select);
       select.focus();
   
