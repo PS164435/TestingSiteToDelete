@@ -123,6 +123,13 @@ body {
   z-index: 1;
 }
 
+.loadout[src$="Empty.png"] {
+  max-height: 0px;
+  border: none;
+  background: transparent;
+  pointer-events: none; /* brak klikania */
+}
+
  select option.option-main {
   background-color: #111C36;
   color: white;
