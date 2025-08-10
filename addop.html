@@ -97,13 +97,11 @@
 
   <div id="side-container">
     <label for="side-select">SIDE</label>
+    <img id="side-image" src="" style="width:50px; height:50px; display:none;">
     <select id="side-select" class="side-select">
-      <option value="">-- wybierz --</option>
       <option value="ATTACKER">ATTACKER</option>
       <option value="DEFENDER">DEFENDER</option>
     </select>
-    <img id="side-image" src="" style="width:50px; height:50px; display:none;">
-    <span id="side-text"></span>
   </div>
 
   <script>
@@ -137,27 +135,19 @@
     });
   });
 
-
   // SIDE
   const sideSelect = document.getElementById('side-select');
   const sideImage = document.getElementById('side-image');
-  const sideText = document.getElementById('side-text');
   sideSelect.addEventListener('change', () => {
     const value = sideSelect.value;
     if (value === 'ATTACKER') {
-      sideImage.src = 'attacker.png';
+      sideImage.src = 'sideAttacker.png';
       sideImage.style.display = 'inline';
-      sideText.textContent = 'ATTACKER';
     } 
     else if (value === 'DEFENDER') {
-      sideImage.src = 'defender.png';
+      sideImage.src = 'sideDefender.png';
       sideImage.style.display = 'inline';
-      sideText.textContent = 'DEFENDER';
     } 
-    else {
-      sideImage.style.display = 'none';
-      sideText.textContent = '';
-    }
   });
 
 
