@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK3</a></p>
+  <p><a href="index.html">BACK4</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -80,6 +80,54 @@
 
   <script src="weapons.js"></script>
   <script src="operatorLoadout.js"></script>
+
+  <div class="form-group">
+    <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
+  </div>
+
+  <script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const codenameSpan = document.getElementById('codename');
+
+  codenameSpan.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = codenameSpan.textContent;
+    input.id = 'codename-input';
+    input.style.minWidth = '120px';
+
+    codenameSpan.replaceWith(input);
+    input.focus();
+
+    function save() {
+      if (input.value.trim() === '') {
+        input.value = 'CODENAME'; // domyślna wartość, jeśli nic nie wpisano
+      }
+      codenameSpan.textContent = input.value.trim();
+      input.replaceWith(codenameSpan);
+    }
+
+    input.addEventListener('blur', save);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        save();
+      }
+      if (e.key === 'Escape') {
+        input.replaceWith(codenameSpan);
+      }
+    });
+  });
+});
+
+
+
+
+
+    
+
+    
+  </script>
 
 </body>
 </html>
