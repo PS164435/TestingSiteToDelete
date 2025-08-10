@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK25</a></p>
+  <p><a href="index.html">BACK26</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -100,16 +100,19 @@
         const mainOption = document.createElement('option');
         mainOption.textContent = mainCategory;
         mainOption.disabled = true;
+        mainOption.classList.add('option-main');
         select.appendChild(mainOption);
         Object.entries(subGroups).forEach(([subGroup, weapons]) => {
           const subOption = document.createElement('option');
           subOption.textContent = subGroup;
           subOption.disabled = true;
+          mainOption.classList.add('option-sub');
           select.appendChild(subOption);
           weapons.forEach(weapon => {
             const opt = document.createElement('option');
             opt.textContent = weapon.name;
             opt.value = weapon.value;
+            opt.classList.add('option-weapon');
             select.appendChild(opt);
           });
         });
