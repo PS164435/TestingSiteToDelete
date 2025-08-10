@@ -89,13 +89,11 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const codenameSpan = document.getElementById('codename');
-  
     codenameSpan.addEventListener('click', () => {
       const input = document.createElement('input');
       input.type = 'text';
       input.value = codenameSpan.textContent;
       input.id = 'codename-input';
-  
       codenameSpan.replaceWith(input);
       input.focus();
   
