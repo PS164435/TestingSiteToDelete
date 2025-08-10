@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK8</a></p>
+  <p><a href="index.html">BACK9</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -96,8 +96,8 @@
 
 
   <div id="side-container">
-    <span id="side-label">SIDE</span>
-    <select id="side-select" style="display:none;">
+    <label for="side-select">SIDE</label>
+    <select id="side-select" class="side-select">
       <option value="">-- wybierz --</option>
       <option value="ATTACKER">ATTACKER</option>
       <option value="DEFENDER">DEFENDER</option>
@@ -137,30 +137,28 @@
     });
   });
 
+
   // SIDE
-  const sideLabel = document.getElementById('side-label');
   const sideSelect = document.getElementById('side-select');
   const sideImage = document.getElementById('side-image');
   const sideText = document.getElementById('side-text');
-  sideLabel.addEventListener('click', () => {
-    sideSelect.style.display = 'inline';
-    sideSelect.focus();
-    sideSelect.click(); // od razu rozwija
-  });
   sideSelect.addEventListener('change', () => {
     const value = sideSelect.value;
     if (value === 'ATTACKER') {
       sideImage.src = 'attacker.png';
       sideImage.style.display = 'inline';
       sideText.textContent = 'ATTACKER';
-    } else if (value === 'DEFENDER') {
+    } 
+    else if (value === 'DEFENDER') {
       sideImage.src = 'defender.png';
       sideImage.style.display = 'inline';
       sideText.textContent = 'DEFENDER';
+    } 
+    else {
+      sideImage.style.display = 'none';
+      sideText.textContent = '';
     }
-    sideSelect.style.display = 'none';
   });
-
 
 
 
