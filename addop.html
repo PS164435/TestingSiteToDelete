@@ -109,6 +109,23 @@
     <span id="squad-text"></span>
   </div>
 
+  <!-- SPECIALTY -->
+  <div id="specialty-container">
+    <label id="specialty-label">SPECIALTY</label>
+    <div id="specialty-options" style="display:none;">
+      <label class="attacker-only"><input type="checkbox" value="FRONT LINE"> FRONT LINE</label><br>
+      <label class="attacker-only"><input type="checkbox" value="BREACH"> BREACH</label><br>
+      <label class="attacker-only"><input type="checkbox" value="MAP CONTROL"> MAP CONTROL</label><br>
+      <label><input type="checkbox" value="SUPPORT"> SUPPORT</label><br>
+      <label><input type="checkbox" value="ANTI-GADGET"> ANTI-GADGET</label><br>
+      <label><input type="checkbox" value="INTEL"> INTEL</label><br>
+      <label class="defender-only"><input type="checkbox" value="ANTI-ENTRY"> ANTI-ENTRY</label><br>
+      <label class="defender-only"><input type="checkbox" value="TRAPPER"> TRAPPER</label><br>
+      <label class="defender-only"><input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL</label><br>
+    </div>
+    <p id="specialty-output"></p>
+  </div>
+
   
   <script>
 
@@ -179,9 +196,40 @@
     }
     squadSelect.style.display = 'none';
   });
-    
 
-
+  //SPECIALTY
+  const specialtyLabel = document.getElementById('specialty-label');
+  const specialtyOptions = document.getElementById('specialty-options');
+  const specialtyOutput = document.getElementById('specialty-output');
+  // Kliknięcie w "SPECIALTY" pokazuje/ukrywa opcje
+  specialtyLabel.addEventListener('click', () => {
+    specialtyOptions.style.display =
+      specialtyOptions.style.display === 'none' ? 'block' : 'none';
+  });
+  // Obsługa zaznaczania (max 2 opcje)
+  specialtyOptions.addEventListener('change', () => {
+    const checkboxes = specialtyOptions.querySelectorAll('input[type="checkbox"]');
+    const checked = Array.from(checkboxes).filter(cb => cb.checked);
+    if (checked.length > 2) {
+      checked[2].checked = false; // odznacz trzecią, jeśli kliknięta
+      return;
+    }
+    const selectedValues = checked.map(cb => cb.value);
+    specialtyOutput.textContent = selectedValues.join(', ');
+  });
+  // Filtrowanie opcji w zależności od SIDE
+  const updateSpecialtyVisibility = (side) => {
+    const attackerOnly = document.querySelectorAll('.attacker-only');
+    const defenderOnly = document.querySelectorAll('.defender-only');
+    attackerOnly.forEach(opt => opt.style.display = (side === 'ATTACKER') ? 'block' : 'none');
+    defenderOnly.forEach(opt => opt.style.display = (side === 'DEFENDER') ? 'block' : 'none');
+  };
+  // Po zmianie SIDE wywołujemy filtrację
+  sideSelect.addEventListener('change', () => {
+    updateSpecialtyVisibility(sideSelect.value);
+  });
+  // Ustawienie widoczności przy starcie
+  updateSpecialtyVisibility(sideSelect.value);
 
 
     
