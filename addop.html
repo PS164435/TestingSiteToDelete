@@ -97,7 +97,6 @@
   <div id="squad-container">
     <label id="squad-label">SQUAD</label>
     <select id="squad-select" style="display:none;">
-      <option value="">-- wybierz --</option>
       <option value="REDHAMMER" data-img="Images/redhammer.png">REDHAMMER</option>
       <option value="VIPERSTRIKE" data-img="Images/viperstrike.png">VIPERSTRIKE</option>
       <option value="GHOSTEYES" data-img="Images/ghosteyes.png">GHOSTEYES</option>
@@ -180,15 +179,22 @@
   const squadSelect = document.getElementById('squad-select');
   const squadImage = document.getElementById('squad-image');
   const squadText = document.getElementById('squad-text');
+  
   squadLabel.addEventListener('click', () => {
-    squadSelect.style.display = 'inline';
-    squadSelect.focus();
-    squadSelect.click();
+    if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
+      squadSelect.style.display = 'inline';
+      squadSelect.focus();
+      squadSelect.click();
+    } else {
+      squadSelect.style.display = 'none';
+    }
   });
+  
   squadSelect.addEventListener('change', () => {
     const selectedOption = squadSelect.options[squadSelect.selectedIndex];
     const imgPath = selectedOption.getAttribute('data-img');
     const squadName = selectedOption.value;
+  
     if (imgPath) {
       squadImage.src = imgPath;
       squadImage.style.display = 'inline';
