@@ -175,38 +175,42 @@
   });
 
   // SQUAD
-  const squadLabel = document.getElementById('squad-label');
-  const squadSelect = document.getElementById('squad-select');
-  const squadImage = document.getElementById('squad-image');
-  const squadText = document.getElementById('squad-text');
-  let currentSquad = '';
-  squadLabel.addEventListener('click', () => {
-    if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
-      squadSelect.style.display = 'inline';
-      squadSelect.focus();
-      squadSelect.click();
-    } else {
-      squadSelect.style.display = 'none';
-    }
-  });
-  squadSelect.addEventListener('change', () => {
-    const selectedOption = squadSelect.options[squadSelect.selectedIndex];
-    const imgPath = selectedOption.getAttribute('data-img');
-    const squadName = selectedOption.value;
-  
-    // Jeśli kliknięto tę samą opcję co wcześniej → zamykamy
-    if (squadName === currentSquad) {
-      squadSelect.style.display = 'none';
-      return;
-    }
-    if (imgPath) {
-      squadImage.src = imgPath;
-      squadImage.style.display = 'inline';
-      squadText.textContent = squadName;
-      currentSquad = squadName;
-    }
+const squadLabel = document.getElementById('squad-label');
+const squadSelect = document.getElementById('squad-select');
+const squadImage = document.getElementById('squad-image');
+const squadText = document.getElementById('squad-text');
+let currentSquad = '';
+
+squadLabel.addEventListener('click', () => {
+  if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
+    squadSelect.style.display = 'inline';
+    squadSelect.focus();
+    squadSelect.click();
+  } else {
     squadSelect.style.display = 'none';
-  });
+  }
+});
+
+// Obsługa zmiany lub ponownego wyboru tej samej opcji
+squadSelect.addEventListener('input', () => {
+  const selectedOption = squadSelect.options[squadSelect.selectedIndex];
+  const imgPath = selectedOption.getAttribute('data-img');
+  const squadName = selectedOption.value;
+
+  if (squadName === currentSquad) {
+    // Wybrano to samo — zamykamy
+    squadSelect.style.display = 'none';
+    return;
+  }
+
+  if (imgPath) {
+    squadImage.src = imgPath;
+    squadImage.style.display = 'inline';
+    squadText.textContent = squadName;
+    currentSquad = squadName;
+  }
+  squadSelect.style.display = 'none';
+});
 
   // SPECIALTY
   const specialtyLabel = document.getElementById('specialty-label');
