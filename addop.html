@@ -174,7 +174,7 @@
     }
   });
 
- // SQUAD
+// SQUAD
 const squadLabel = document.getElementById('squad-label');
 const squadSelect = document.getElementById('squad-select');
 const squadImage = document.getElementById('squad-image');
@@ -197,11 +197,11 @@ squadSelect.addEventListener('input', () => {
   if (imgPath) {
     squadImage.src = imgPath;
     squadImage.style.display = 'inline';
-    squadText.textContent = squadName;
+    squadText.textContent = squadName; // tekst zawsze widoczny w span
     currentSquad = squadName;
   }
 
-  // Reset wyboru — żeby można było wybrać to samo ponownie
+  // Reset wyboru w <select> żeby móc wybrać to samo ponownie
   squadSelect.selectedIndex = -1;
 
   // Ukrycie selecta
