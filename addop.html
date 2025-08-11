@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK3</a></p>
+  <p><a href="index.html">BACK4</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -179,6 +179,7 @@
   const squadSelect = document.getElementById('squad-select');
   const squadImage = document.getElementById('squad-image');
   const squadText = document.getElementById('squad-text');
+  let currentSquad = ''; // zapamiętuje ostatnio wybraną opcję
   
   squadLabel.addEventListener('click', () => {
     if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
@@ -195,10 +196,17 @@
     const imgPath = selectedOption.getAttribute('data-img');
     const squadName = selectedOption.value;
   
+    // Jeśli kliknięto tę samą opcję co wcześniej → zamykamy
+    if (squadName === currentSquad) {
+      squadSelect.style.display = 'none';
+      return;
+    }
+  
     if (imgPath) {
       squadImage.src = imgPath;
       squadImage.style.display = 'inline';
       squadText.textContent = squadName;
+      currentSquad = squadName;
     }
     squadSelect.style.display = 'none';
   });
