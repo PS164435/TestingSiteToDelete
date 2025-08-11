@@ -208,10 +208,6 @@
   specialtyOptions.addEventListener('change', () => {
     const checkboxes = specialtyOptions.querySelectorAll('input[type="checkbox"]');
     const checked = Array.from(checkboxes).filter(cb => cb.checked);
-    if (checked.length > 2) {
-      checked[2].checked = false;
-      return;
-    }
     const selectedValues = checked.map(cb => cb.value);
     specialtyOutput.textContent = selectedValues.join(', ');
   });
