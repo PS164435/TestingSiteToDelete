@@ -93,6 +93,23 @@
     <span id="side-text">ATTACKER</span>
   </div>
 
+  <!-- squad -->
+  <div id="squad-container">
+    <label id="squad-label">SQUAD</label>
+    <img id="squad-image" src="" style="width:50px; height:50px; display:none;">
+    <span id="squad-text"></span>
+    <select id="squad-select" style="display:none;">
+      <option value="">-- wybierz --</option>
+      <option value="REDHAMMER" data-img="Images/redhammer.jpg">REDHAMMER</option>
+      <option value="VIPERSTRIKE" data-img="Images/viperstrike.jpg">VIPERSTRIKE</option>
+      <option value="GHOSTEYES" data-img="Images/ghosteyes.jpg">GHOSTEYES</option>
+      <option value="WOLFGUARD" data-img="Images/wolfguard.jpg">WOLFGUARD</option>
+      <option value="NIGHTHAVEN" data-img="Images/nighthaven.jpg">NIGHTHAVEN</option>
+      <option value="KERES" data-img="Images/keres.jpg">KERES</option>
+    </select>
+  </div>
+
+  
   <script>
 
   // CODENAME
@@ -140,6 +157,29 @@
       sideText.textContent = 'ATTACKER';
     }
   });
+
+  // SQUAD
+  const squadLabel = document.getElementById('squad-label');
+  const squadSelect = document.getElementById('squad-select');
+  const squadImage = document.getElementById('squad-image');
+  const squadText = document.getElementById('squad-text');
+  squadLabel.addEventListener('click', () => {
+    squadSelect.style.display = 'inline';
+    squadSelect.focus();
+    squadSelect.click();
+  });
+  squadSelect.addEventListener('change', () => {
+    const selectedOption = squadSelect.options[squadSelect.selectedIndex];
+    const imgPath = selectedOption.getAttribute('data-img');
+    const squadName = selectedOption.value;
+    if (imgPath) {
+      squadImage.src = imgPath;
+      squadImage.style.display = 'inline';
+      squadText.textContent = squadName;
+    }
+    squadSelect.style.display = 'none';
+  });
+    
 
 
 
