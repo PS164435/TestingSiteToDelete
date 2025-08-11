@@ -180,7 +180,6 @@ const squadSelect = document.getElementById('squad-select');
 const squadImage = document.getElementById('squad-image');
 const squadText = document.getElementById('squad-text');
 let currentSquad = '';
-
 squadLabel.addEventListener('click', () => {
   if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
     squadSelect.style.display = 'inline';
@@ -188,23 +187,16 @@ squadLabel.addEventListener('click', () => {
     squadSelect.style.display = 'none';
   }
 });
-
 squadSelect.addEventListener('input', () => {
   const selectedOption = squadSelect.options[squadSelect.selectedIndex];
   const imgPath = selectedOption.getAttribute('data-img');
   const squadName = selectedOption.value;
-
   if (imgPath) {
     squadImage.src = imgPath;
     squadImage.style.display = 'inline';
     squadText.textContent = squadName; // tekst zawsze widoczny w span
     currentSquad = squadName;
   }
-
-  // Reset wyboru w <select> żeby móc wybrać to samo ponownie
-  squadSelect.selectedIndex = 0;
-
-  // Ukrycie selecta
   squadSelect.style.display = 'none';
 });
 
