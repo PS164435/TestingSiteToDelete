@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK5</a></p>
+  <p><a href="index.html">BACK6</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -190,19 +190,10 @@ squadLabel.addEventListener('click', () => {
     squadSelect.style.display = 'none';
   }
 });
-
-// Obsługa zmiany lub ponownego wyboru tej samej opcji
 squadSelect.addEventListener('input', () => {
   const selectedOption = squadSelect.options[squadSelect.selectedIndex];
   const imgPath = selectedOption.getAttribute('data-img');
   const squadName = selectedOption.value;
-
-  if (squadName === currentSquad) {
-    // Wybrano to samo — zamykamy
-    squadSelect.style.display = 'none';
-    return;
-  }
-
   if (imgPath) {
     squadImage.src = imgPath;
     squadImage.style.display = 'inline';
