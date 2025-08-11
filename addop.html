@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK7</a></p>
+  <p><a href="index.html">BACK8</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -104,7 +104,7 @@
       <option value="NIGHTHAVEN" data-img="Images/nighthaven.png">NIGHTHAVEN</option>
       <option value="KERES" data-img="Images/keres.png">KERES</option>
     </select>
-    <img id="squad-image" src="" style="width:50px; height:50px; display:none;">
+    <img id="squad-image" src="Images/redhammer.png" style="width:50px; height:50px; display:none;">
     <span id="squad-text"></span>
   </div>
 
@@ -202,7 +202,7 @@ squadSelect.addEventListener('input', () => {
   }
 
   // Reset wyboru w <select> żeby móc wybrać to samo ponownie
-  squadSelect.selectedIndex = -1;
+  squadSelect.selectedIndex = 0;
 
   // Ukrycie selecta
   squadSelect.style.display = 'none';
