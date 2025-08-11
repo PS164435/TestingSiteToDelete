@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK1</a></p>
+  <p><a href="index.html">BACK2</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -88,12 +88,9 @@
 
   <!-- side -->
   <div id="side-container">
-    <label for="side-select">SIDE</label>
+    <span id="side-label">SIDE</span>
     <img id="side-image" src="Images/sideAttacker.png" style="width:50px; height:50px;">
-    <select id="side-select" class="side-select">
-      <option value="ATTACKER">ATTACKER</option>
-      <option value="DEFENDER">DEFENDER</option>
-    </select>
+    <span id="side-text">ATTACKER</span>
   </div>
 
   <script>
@@ -128,18 +125,20 @@
   });
 
   // SIDE
-  const sideSelect = document.getElementById('side-select');
+  const sideLabel = document.getElementById('side-label');
   const sideImage = document.getElementById('side-image');
-  sideSelect.addEventListener('change', () => {
-    const value = sideSelect.value;
-    if (value === 'ATTACKER') {
-      sideImage.src = 'Images/sideAttacker.png';
-      sideImage.style.display = 'inline';
-    } 
-    else if (value === 'DEFENDER') {
+  const sideText = document.getElementById('side-text');
+  let currentSide = 'ATTACKER';
+  sideLabel.addEventListener('click', () => {
+    if (currentSide === 'ATTACKER') {
+      currentSide = 'DEFENDER';
       sideImage.src = 'Images/sideDefender.png';
-      sideImage.style.display = 'inline';
-    } 
+      sideText.textContent = 'DEFENDER';
+    } else {
+      currentSide = 'ATTACKER';
+      sideImage.src = 'Images/sideAttacker.png';
+      sideText.textContent = 'ATTACKER';
+    }
   });
 
 
