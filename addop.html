@@ -7,7 +7,7 @@
 </head>
 <body>
 
-  <p><a href="index.html">BACK6</a></p>
+  <p><a href="index.html">BACK7</a></p>
 
   <div class="triple-container">
     <div class="section-triple">
@@ -174,7 +174,7 @@
     }
   });
 
-  // SQUAD
+ // SQUAD
 const squadLabel = document.getElementById('squad-label');
 const squadSelect = document.getElementById('squad-select');
 const squadImage = document.getElementById('squad-image');
@@ -184,22 +184,27 @@ let currentSquad = '';
 squadLabel.addEventListener('click', () => {
   if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
     squadSelect.style.display = 'inline';
-    squadSelect.focus();
-    squadSelect.click();
   } else {
     squadSelect.style.display = 'none';
   }
 });
+
 squadSelect.addEventListener('input', () => {
   const selectedOption = squadSelect.options[squadSelect.selectedIndex];
   const imgPath = selectedOption.getAttribute('data-img');
   const squadName = selectedOption.value;
+
   if (imgPath) {
     squadImage.src = imgPath;
     squadImage.style.display = 'inline';
     squadText.textContent = squadName;
     currentSquad = squadName;
   }
+
+  // Reset wyboru — żeby można było wybrać to samo ponownie
+  squadSelect.selectedIndex = -1;
+
+  // Ukrycie selecta
   squadSelect.style.display = 'none';
 });
 
