@@ -176,7 +176,8 @@ select option.option-empty {
 }
 
 #side-container,
-#squad-container {
+#squad-container,
+#health-speed-container {
   display: flex;
   align-items: center;
   border: 0px solid red;
@@ -191,14 +192,18 @@ select option.option-empty {
 
 #side-label,
 #squad-label,
-#specialty-label {
+#specialty-label,
+#health-label,
+#speed-label {
   color: #ff3d2c;
   font-weight: bold;
   margin: 0;
 }
 #side-label:hover,
 #squad-label:hover,
-#specialty-label:hover {
+#specialty-label:hover,
+#health-label:hover,
+#speed-label:hover {
   cursor: pointer;
   color: #CC9500;
 }
@@ -235,6 +240,13 @@ select option.option-empty {
   height: 1px;
   background-color: #b0bac6;
   margin: 1px 0px 3px 0px;
+}
+
+.health-speed-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #b0bac6;
+  margin: 0px;
 }
 
 .specialty-output {
