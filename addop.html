@@ -180,6 +180,24 @@ const squadSelect = document.getElementById('squad-select');
 const squadImage = document.getElementById('squad-image');
 const squadText = document.getElementById('squad-text');
 let currentSquad = '';
+// funkcja ustawiająca aktualny squad
+function setSquad(option) {
+  const imgPath = option.getAttribute('data-img');
+  const squadName = option.value;
+  if (imgPath) {
+    squadImage.src = imgPath;
+    squadImage.style.display = 'inline';
+    squadText.textContent = squadName;
+    currentSquad = squadName;
+  }
+}
+
+// ustawienie domyślnej wartości po załadowaniu strony
+document.addEventListener('DOMContentLoaded', () => {
+  const defaultOption = squadSelect.options[squadSelect.selectedIndex];
+  setSquad(defaultOption);
+});
+
 squadLabel.addEventListener('click', () => {
   if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
     squadSelect.style.display = 'inline';
@@ -187,16 +205,9 @@ squadLabel.addEventListener('click', () => {
     squadSelect.style.display = 'none';
   }
 });
+
 squadSelect.addEventListener('input', () => {
-  const selectedOption = squadSelect.options[squadSelect.selectedIndex];
-  const imgPath = selectedOption.getAttribute('data-img');
-  const squadName = selectedOption.value;
-  if (imgPath) {
-    squadImage.src = imgPath;
-    squadImage.style.display = 'inline';
-    squadText.textContent = squadName; // tekst zawsze widoczny w span
-    currentSquad = squadName;
-  }
+  setSquad(squadSelect.options[squadSelect.selectedIndex]);
   squadSelect.style.display = 'none';
 });
 
