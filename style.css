@@ -195,7 +195,7 @@ select option.option-empty {
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid red;
-  gap: 6px;
+  gap: 5px;
 }
 
 #side-label,
@@ -221,7 +221,7 @@ select option.option-empty {
 }
 
 .editable-text-codename {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: bold;
 }
 
