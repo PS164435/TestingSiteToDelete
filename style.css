@@ -173,14 +173,6 @@ select option.option-empty {
   outline: none;
 }
 
-#side-label,
-#squad-label,
-#specialty-label {
-  color: #ff3d2c;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-}
-
 .single-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -188,7 +180,7 @@ select option.option-empty {
   max-width: 400px;
   margin: 20px auto; /* wyśrodkowanie */
   padding: 15px;
-  border-radius: 1px white;
+  border: 1px white;
   color: white;
 }
 
@@ -197,7 +189,7 @@ select option.option-empty {
 #specialty-container {
   display: flex;
   align-items: center;
-  border-radius: 1px red;
+  border: 1px red;
 }
 
 #side-label,
