@@ -176,7 +176,7 @@ select option.option-empty {
 }
 
 #side-container,
-#squad-container, {
+#squad-container {
   display: flex;
   align-items: center;
   border: 0px solid red;
