@@ -167,9 +167,9 @@ select option.option-empty {
 .single-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 15px; /* odstęp między elementami */
+  gap: 15px;
   max-width: 400px;
-  margin: 20px auto; /* wyśrodkowanie */
+  margin: 20px auto;
   padding: 15px;
   border: 1px solid white;
   color: white;
@@ -213,16 +213,16 @@ select option.option-empty {
 #side-image{
   width: 30px;
   height: 30px;
-  margin: 0px, 11px;
+  margin: 0px 11px;
 }
 #squad-image {
   width: 40px;
   height: 40px;
-  margin: 0px, 11px;
+  margin: 0px 11px;
 }
 
 .editable-text-codename {
-  font-size: 88px;
+  font-size: 48px;
   font-weight: bold;
 }
 .editable-text-codename:hover {
