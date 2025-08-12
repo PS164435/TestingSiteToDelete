@@ -81,48 +81,50 @@
   <script src="weapons.js"></script>
   <script src="operatorLoadout.js"></script>
 
-  <!-- codename -->
-  <div class="form-group">
-    <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
-  </div>
-
-  <!-- side -->
-  <div id="side-container">
-    <span id="side-label">SIDE</span>
-    <img id="side-image" src="Images/sideAttacker.png" style="width:50px; height:50px;">
-    <span id="side-text">ATTACKER</span>
-  </div>
-
-  <!-- squad -->
-  <div id="squad-container">
-    <label id="squad-label">SQUAD</label>
-    <select id="squad-select" style="display:none;">
-      <option value="REDHAMMER" data-img="Images/redhammer.png">REDHAMMER</option>
-      <option value="VIPERSTRIKE" data-img="Images/viperstrike.png">VIPERSTRIKE</option>
-      <option value="GHOSTEYES" data-img="Images/ghosteyes.png">GHOSTEYES</option>
-      <option value="WOLFGUARD" data-img="Images/wolfguard.png">WOLFGUARD</option>
-      <option value="NIGHTHAVEN" data-img="Images/nighthaven.png">NIGHTHAVEN</option>
-      <option value="KERES" data-img="Images/keres.png">KERES</option>
-    </select>
-    <img id="squad-image" src='' style="width:50px; height:50px; display:none;">
-    <span id="squad-text"></span>
-  </div>
-
-  <!-- SPECIALTY -->
-  <div id="specialty-container">
-    <label id="specialty-label">SPECIALTY</label>
-    <div id="specialty-options" style="display:none;">
-      <label> <input type="checkbox" value="FRONT LINE"> FRONT LINE (atk)</label><br>
-      <label> <input type="checkbox" value="BREACH"> BREACH (atk)</label><br>
-      <label> <input type="checkbox" value="MAP CONTROL"> MAP CONTROL (atk)</label><br>
-      <label> <input type="checkbox" value="SUPPORT"> SUPPORT</label><br>
-      <label> <input type="checkbox" value="ANTI-GADGET"> ANTI-GADGET</label><br>
-      <label> <input type="checkbox" value="INTEL"> INTEL</label><br>
-      <label> <input type="checkbox" value="ANTI-ENTRY"> ANTI-ENTRY (def)</label><br>
-      <label> <input type="checkbox" value="TRAPPER"> TRAPPER (def)</label><br>
-      <label> <input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL (def)</label><br>
+  < div class="single-container">
+    <!-- codename -->
+    <div class="form-group">
+      <span id="codename" class="editable-text" tabindex="0">CODENAME</span>
     </div>
-    <p id="specialty-output"></p>
+  
+    <!-- side -->
+    <div id="side-container">
+      <span id="side-label">SIDE</span>
+      <img id="side-image" src="Images/sideAttacker.png" style="width:50px; height:50px;">
+      <span id="side-text">ATTACKER</span>
+    </div>
+  
+    <!-- squad -->
+    <div id="squad-container">
+      <label id="squad-label">SQUAD</label>
+      <select id="squad-select" style="display:none;">
+        <option value="REDHAMMER" data-img="Images/redhammer.png">REDHAMMER</option>
+        <option value="VIPERSTRIKE" data-img="Images/viperstrike.png">VIPERSTRIKE</option>
+        <option value="GHOSTEYES" data-img="Images/ghosteyes.png">GHOSTEYES</option>
+        <option value="WOLFGUARD" data-img="Images/wolfguard.png">WOLFGUARD</option>
+        <option value="NIGHTHAVEN" data-img="Images/nighthaven.png">NIGHTHAVEN</option>
+        <option value="KERES" data-img="Images/keres.png">KERES</option>
+      </select>
+      <img id="squad-image" src='' style="width:50px; height:50px; display:none;">
+      <span id="squad-text"></span>
+    </div>
+  
+    <!-- SPECIALTY -->
+    <div id="specialty-container">
+      <label id="specialty-label">SPECIALTY</label>
+      <div id="specialty-options" style="display:none;">
+        <label> <input type="checkbox" value="FRONT LINE"> FRONT LINE (atk)</label><br>
+        <label> <input type="checkbox" value="BREACH"> BREACH (atk)</label><br>
+        <label> <input type="checkbox" value="MAP CONTROL"> MAP CONTROL (atk)</label><br>
+        <label> <input type="checkbox" value="SUPPORT"> SUPPORT</label><br>
+        <label> <input type="checkbox" value="ANTI-GADGET"> ANTI-GADGET</label><br>
+        <label> <input type="checkbox" value="INTEL"> INTEL</label><br>
+        <label> <input type="checkbox" value="ANTI-ENTRY"> ANTI-ENTRY (def)</label><br>
+        <label> <input type="checkbox" value="TRAPPER"> TRAPPER (def)</label><br>
+        <label> <input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL (def)</label><br>
+      </div>
+      <p id="specialty-output"></p>
+    </div>
   </div>
 
   
