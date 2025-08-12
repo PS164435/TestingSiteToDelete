@@ -195,7 +195,7 @@ select option.option-empty {
   flex-direction: column;
   align-items: flex-start;
   border: 1px solid red;
-  gap: 5px;
+  gap: 4px;
 }
 
 #side-label,
