@@ -124,7 +124,7 @@
         <label> <input type="checkbox" value="TRAPPER"> TRAPPER (def)</label><br>
         <label> <input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL (def)</label><br>
       </div>
-      <p id="specialty-output"></p>
+      <p id="specialty-output" class="specialty-output"></p>
     </div>
   </div>
 
@@ -177,42 +177,37 @@
     }
   });
 
-// SQUAD
-const squadLabel = document.getElementById('squad-label');
-const squadSelect = document.getElementById('squad-select');
-const squadImage = document.getElementById('squad-image');
-const squadText = document.getElementById('squad-text');
-let currentSquad = '';
-// funkcja ustawiająca aktualny squad
-function setSquad(option) {
-  const imgPath = option.getAttribute('data-img');
-  const squadName = option.value;
-  if (imgPath) {
-    squadImage.src = imgPath;
-    squadImage.style.display = 'inline';
-    squadText.textContent = squadName;
-    currentSquad = squadName;
+  // SQUAD
+  const squadLabel = document.getElementById('squad-label');
+  const squadSelect = document.getElementById('squad-select');
+  const squadImage = document.getElementById('squad-image');
+  const squadText = document.getElementById('squad-text');
+  let currentSquad = '';
+  function setSquad(option) {
+    const imgPath = option.getAttribute('data-img');
+    const squadName = option.value;
+    if (imgPath) {
+      squadImage.src = imgPath;
+      squadImage.style.display = 'inline';
+      squadText.textContent = squadName;
+      currentSquad = squadName;
+    }
   }
-}
-
-// ustawienie domyślnej wartości po załadowaniu strony
-document.addEventListener('DOMContentLoaded', () => {
-  const defaultOption = squadSelect.options[squadSelect.selectedIndex];
-  setSquad(defaultOption);
-});
-
-squadLabel.addEventListener('click', () => {
-  if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
-    squadSelect.style.display = 'inline';
-  } else {
+  document.addEventListener('DOMContentLoaded', () => {
+    const defaultOption = squadSelect.options[squadSelect.selectedIndex];
+    setSquad(defaultOption);
+  });
+  squadLabel.addEventListener('click', () => {
+    if (squadSelect.style.display === 'none' || squadSelect.style.display === '') {
+      squadSelect.style.display = 'inline';
+    } else {
+      squadSelect.style.display = 'none';
+    }
+  });
+  squadSelect.addEventListener('input', () => {
+    setSquad(squadSelect.options[squadSelect.selectedIndex]);
     squadSelect.style.display = 'none';
-  }
-});
-
-squadSelect.addEventListener('input', () => {
-  setSquad(squadSelect.options[squadSelect.selectedIndex]);
-  squadSelect.style.display = 'none';
-});
+  });
 
   // SPECIALTY
   const specialtyLabel = document.getElementById('specialty-label');
