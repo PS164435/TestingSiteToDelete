@@ -237,8 +237,10 @@ select option.option-empty {
   height: 1px;
   background-color: #b0bac6;
   margin: 0;
+  border: 1px solid blue;
 }
 
 p {
   border: 1px solid green;
+  margin: 0;
 }
