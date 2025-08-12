@@ -180,3 +180,36 @@ select option.option-empty {
   font-weight: bold;
   font-family: Arial, sans-serif;
 }
+
+.single-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px; /* odstęp między elementami */
+  max-width: 400px;
+  margin: 20px auto; /* wyśrodkowanie */
+  padding: 15px;
+  border-radius: 1px white;
+  color: white;
+}
+
+#side-container,
+#squad-container,
+#specialty-container {
+  display: flex;
+  align-items: center;
+  border-radius: 1px red;
+}
+
+#side-label,
+#squad-label,
+#specialty-label {
+  font-size: 11px;
+  color: #ff3d2c;
+  font-weight: bold;
+}
+
+#side-image,
+#squad-image {
+  width: 50px;
+  height: 50px;
+}
