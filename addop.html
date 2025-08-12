@@ -109,7 +109,7 @@
       <span id="squad-text"></span>
     </div>
   
-    <!-- SPECIALTY -->
+    <!-- specialty -->
     <div id="specialty-container">
       <label id="specialty-label">SPECIALTY</label>
       <div class="specialty-divider"></div>
@@ -126,6 +126,19 @@
       </div>
       <p id="specialty-output" class="specialty-output"></p>
     </div>
+  
+    <!-- health speed -->
+    <div id="health-speed-container">
+      <div class="health-speed-item">
+        <span id="health-label">HEALTH</span>
+        <img id="health-image" src="Images/healthspeedPoints2.png" alt="Health points">
+      </div>
+      <div class="health-speed-item">
+        <span id="speed-label">SPEED</span>
+        <img id="speed-image" src="Images/healthspeedPoints2.png" alt="Speed points">
+      </div>
+    </div>
+
   </div>
 
   
@@ -223,7 +236,32 @@
     const selectedValues = checked.map(cb => cb.value);
     specialtyOutput.textContent = selectedValues.join(', ');
   });
-    
+
+  // HEALTH SPEED
+  const healthLabel = document.getElementById('health-label');
+  const speedLabel = document.getElementById('speed-label');
+  const healthImage = document.getElementById('health-image');
+  const speedImage = document.getElementById('speed-image');
+  const healthspeedstates = [
+    ['healthspeedPoints3.png', 'healthspeedPoints1.png'],
+    ['healthspeedPoints2.png', 'healthspeedPoints2.png'],
+    ['healthspeedPoints1.png', 'healthspeedPoints3.png']
+  ];
+  let currentState = 1;
+  function updateImages() {
+    healthImage.src = 'Images/' + healthspeedstates[currentState][0];
+    speedImage.src = 'Images/' + healthspeedstates[currentState][1];
+  }
+  healthLabel.addEventListener('click', () => {
+    currentState = (currentState - 1 + healthspeedstates.length) % healthspeedstates.length;
+    updateImages();
+  });
+  speedLabel.addEventListener('click', () => {
+    currentState = (currentState + 1) % healthspeedstates.length;
+    updateImages();
+  });
+  updateImages();
+      
   </script>
 
 </body>
