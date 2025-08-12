@@ -176,8 +176,7 @@ select option.option-empty {
 }
 
 #side-container,
-#squad-container,
-#health-speed-container {
+#squad-container, {
   display: flex;
   align-items: center;
   border: 0px solid red;
@@ -188,6 +187,13 @@ select option.option-empty {
   align-items: flex-start;
   border: 0px solid red;
   gap: 4px;
+}
+#health-speed-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid red;
 }
 
 #side-label,
