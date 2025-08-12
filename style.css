@@ -172,3 +172,10 @@ select option.option-empty {
 .side-select:focus {
   outline: none;
 }
+
+#side-label,
+#squad-label,
+#specialty-label {
+  font-size: 11px;
+  color: #ff3d2c;
+}
