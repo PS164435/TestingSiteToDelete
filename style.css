@@ -158,7 +158,6 @@ select option.option-empty {
   font: inherit;
   color: inherit;
   padding: 0;
-  cursor: pointer;
   appearance: none;
 }
 .side-select:focus {
