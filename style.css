@@ -222,6 +222,7 @@ select option.option-empty {
 
 .editable-text-codename {
   font-size: 40px;
+  font-weight: bold;
 }
 
 .specialty-divider {
