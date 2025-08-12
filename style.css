@@ -249,6 +249,12 @@ select option.option-empty {
   margin: 0px;
 }
 
+.health-speed-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .specialty-output {
   margin: 0;
 }
