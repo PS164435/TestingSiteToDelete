@@ -211,6 +211,13 @@ select option.option-empty {
   color: #CC9500;
 }
 
+#codename,
+#side-text,
+#squad-text,
+#specialty-output {
+  color: #b0bac6;
+}
+
 #side-image{
   width: 30px;
   height: 30px;
@@ -228,6 +235,6 @@ select option.option-empty {
 .specialty-divider {
   width: 100%;
   height: 1px;
-  background-color: #476679;
+  background-color: #b0bac6;
   margin: 0;
 }
