@@ -152,13 +152,6 @@ select option.option-empty {
   color: white;
 }
 
-#side-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
 .side-select {
   border: none;
   background: none;
@@ -168,7 +161,6 @@ select option.option-empty {
   cursor: pointer;
   appearance: none;
 }
-
 .side-select:focus {
   outline: none;
 }
