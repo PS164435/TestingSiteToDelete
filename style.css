@@ -177,4 +177,6 @@ select option.option-empty {
 #squad-label,
 #specialty-label {
   color: #ff3d2c;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
 }
