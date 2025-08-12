@@ -240,7 +240,7 @@ select option.option-empty {
   border: 1px solid blue;
 }
 
-p {
+.specialty-output {
   border: 1px solid green;
   margin: 0;
 }
