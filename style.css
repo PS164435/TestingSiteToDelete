@@ -190,6 +190,13 @@ select option.option-empty {
   align-items: center;
   border: 1px solid red;
 }
+#specialty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid red;
+  gap: 6px;
+}
 
 #side-label,
 #squad-label,
@@ -197,13 +204,11 @@ select option.option-empty {
   color: #ff3d2c;
   font-weight: bold;
 }
-
-#specialty-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid red;
-  gap: 6px;
+#side-label:hover,
+#squad-label:hover,
+#specialty-label:hover {
+  cursor: pointer;
+  color: #B8871D;
 }
 
 #side-image{
