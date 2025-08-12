@@ -208,7 +208,7 @@ select option.option-empty {
 #squad-label:hover,
 #specialty-label:hover {
   cursor: pointer;
-  color: #B8871D;
+  color: #CC9500;
 }
 
 #side-image{
@@ -220,7 +220,7 @@ select option.option-empty {
   height: 40px;
 }
 
-editable-text-codename {
+.editable-text-codename {
   font-size: 40px;
 }
 
