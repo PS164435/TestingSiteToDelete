@@ -213,14 +213,16 @@ select option.option-empty {
 #side-image{
   width: 30px;
   height: 30px;
+  margin: 0px, 11px;
 }
 #squad-image {
   width: 40px;
   height: 40px;
+  margin: 0px, 11px;
 }
 
 .editable-text-codename {
-  font-size: 8px;
+  font-size: 48px;
   font-weight: bold;
 }
 
