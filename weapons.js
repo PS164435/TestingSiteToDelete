@@ -150,7 +150,7 @@ const secondaryWeapons = {
   },
   "======== REVOLVER ========": {
     " -- DEFAULT WEAPON -- ": [
-      { name: '.44 VENDETTA', value: 'Weapons/44 VENDETTA.png' } 
+      { name: '.44 VENDETTA', value: 'Weapons/44 VENDETTA.png' },
       { name: 'BAILIFF 410', value: 'Weapons/BAILIFF 410.png' },
       { name: 'KERATOS .357', value: 'Weapons/KERATOS .357.png' },
       { name: 'LFP586', value: 'Weapons/LFP586.png' }   
