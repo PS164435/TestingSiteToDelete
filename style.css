@@ -190,9 +190,9 @@ select option.option-empty {
 }
 #health-speed-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 40px;
-  border: 1px solid red;
+  border: 0px solid red;
 }
 
 #side-label,
