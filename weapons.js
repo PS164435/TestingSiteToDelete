@@ -160,9 +160,9 @@ const secondaryWeapons = {
   },
   "======== HANDGUN ========": {
     " -- DEFAULT WEAPON -- ": [
+      { name: '.44 MAG SEMI-AUTO', value: 'Weapons/44 MAG SEMI-AUTO.png' },
       { name: '1911 TACOPS', value: 'Weapons/1911 TACOPS.png' },
       { name: '5.7 USG', value: 'Weapons/5.7 USG.png' },
-      { name: '.44 MAG SEMI-AUTO', value: 'Weapons/44 MAG SEMI-AUTO.png' },
       { name: 'D-50', value: 'Weapons/D-50.png' },
       { name: 'GSH-18', value: 'Weapons/GSH-18.png' },
       { name: 'LUISON', value: 'Weapons/LUISON.png' },
