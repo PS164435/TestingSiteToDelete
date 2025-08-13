@@ -265,6 +265,7 @@ select option.option-empty {
   align-items: flex-start;
   gap: 0px;
   border: 1px solid blue;
+  width: 100%;
 }
 
 .specialty-output {
