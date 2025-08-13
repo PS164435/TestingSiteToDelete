@@ -21,7 +21,6 @@ const primaryWeapons = {
       { name: 'MK17 CQB', value: 'Weapons/MK17 CQB.png' },
       { name: 'PARA-308', value: 'Weapons/PARA-308.png' },
       { name: 'PCX-33', value: 'Weapons/PCX-33.png' },
-      { name: 'PDW9', value: 'Weapons/PDW9.png' },
       { name: 'POF9', value: 'Weapons/POF9.png' },
       { name: 'R4-C', value: 'Weapons/R4-C.png' },
       { name: 'SC3000K', value: 'Weapons/SC3000K.png' },
@@ -38,9 +37,9 @@ const primaryWeapons = {
       { name: 'ALDA 5.56', value: 'Weapons/ALDA 5.56.png' },
       { name: 'DP27', value: 'Weapons/DP27.png' },
       { name: 'G8A1', value: 'Weapons/G8A1.png' },
-      { name: 'M249 SAW', value: 'Weapons/M249 SAW.png' },
-      { name: 'M249', value: 'Weapons/M249.png' },
       { name: 'LMG-E', value: 'Weapons/LMG-E.png' },
+      { name: 'M249', value: 'Weapons/M249.png' },
+      { name: 'M249 SAW', value: 'Weapons/M249 SAW.png' },
       { name: 'T-95 LSW', value: 'Weapons/T-95 LSW.png' },
     ],
     " -- CUSTOM WEAPON -- ": [ 
@@ -81,6 +80,7 @@ const primaryWeapons = {
       { name: 'MX4 STORM', value: 'Weapons/MX4 STORM.png' },
       { name: 'P10 RONI', value: 'Weapons/P10 RONI.png' },
       { name: 'P90', value: 'Weapons/P90.png' },
+      { name: 'PDW9', value: 'Weapons/PDW9.png' },
       { name: 'SCORPION EVO 3 A1', value: 'Weapons/SCORPION EVO 3 A1.png' },
       { name: 'T-5 SMG', value: 'Weapons/T-5 SMG.png' },
       { name: 'UMP45', value: 'Weapons/UMP45.png' },
@@ -108,8 +108,8 @@ const primaryWeapons = {
       { name: 'M870', value: 'Weapons/M870.png' },
       { name: 'SASG-12', value: 'Weapons/SASG-12.png' },
       { name: 'SG-CQB', value: 'Weapons/SG-CQB.png' },
-      { name: 'SIX12 SD', value: 'Weapons/SIX12 SD.png' },
       { name: 'SIX12', value: 'Weapons/SIX12.png' },
+      { name: 'SIX12 SD', value: 'Weapons/SIX12 SD.png' },
       { name: 'SPAS-12', value: 'Weapons/SPAS-12.png' },
       { name: 'SPAS-15', value: 'Weapons/SPAS-15.png' },
       { name: 'SUPER 90', value: 'Weapons/SUPER 90.png' },
@@ -150,9 +150,10 @@ const secondaryWeapons = {
   },
   "======== REVOLVER ========": {
     " -- DEFAULT WEAPON -- ": [
-      { name: 'KERATOS .357', value: 'Weapons/KERATOS .357.png' },
-      { name: 'LFP586', value: 'Weapons/LFP586.png' },
+      { name: '.44 VENDETTA', value: 'Weapons/44 VENDETTA.png' } 
       { name: 'BAILIFF 410', value: 'Weapons/BAILIFF 410.png' },
+      { name: 'KERATOS .357', value: 'Weapons/KERATOS .357.png' },
+      { name: 'LFP586', value: 'Weapons/LFP586.png' }   
     ],
     " -- CUSTOM WEAPON -- ": [
     ],
@@ -161,6 +162,7 @@ const secondaryWeapons = {
     " -- DEFAULT WEAPON -- ": [
       { name: '1911 TACOPS', value: 'Weapons/1911 TACOPS.png' },
       { name: '5.7 USG', value: 'Weapons/5.7 USG.png' },
+      { name: '.44 MAG SEMI-AUTO', value: 'Weapons/44 MAG SEMI-AUTO.png' },
       { name: 'D-50', value: 'Weapons/D-50.png' },
       { name: 'GSH-18', value: 'Weapons/GSH-18.png' },
       { name: 'LUISON', value: 'Weapons/LUISON.png' },
