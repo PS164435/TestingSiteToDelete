@@ -164,7 +164,6 @@ select option.option-empty {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
-  max-width: 400px;
   margin: 20px 10%;
   padding: 15px;
   border: 1px solid white;
