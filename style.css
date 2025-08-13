@@ -271,3 +271,10 @@ select option.option-empty {
 .specialty-output {
   margin: 0;
 }
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #b0bac6;
+  text-align: center;
+}
