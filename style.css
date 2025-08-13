@@ -257,7 +257,7 @@ select option.option-empty {
 .health-speed-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0px;
   width: 50%;
 }
