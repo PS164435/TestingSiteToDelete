@@ -194,6 +194,7 @@ select option.option-empty {
   align-items: flex-start;
   gap: 40px;
   border: 0px solid red;
+  width: 100%;
 }
 
 #side-label,
@@ -253,6 +254,7 @@ select option.option-empty {
   height: 1px;
   background-color: #b0bac6;
   margin: 5px 0px 7px 0px;
+  align-self: flex-start;
 }
 
 .health-speed-item {
