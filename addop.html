@@ -9,6 +9,63 @@
 
   <p><a href="index.html">BACK9</a></p>
 
+  <div class="single-container">
+    <!-- codename -->
+    <div class="form-group">
+      <span id="codename" class="editable-text-codename" tabindex="0">CODENAME</span>
+    </div>
+    <!-- side -->
+    <div id="side-container">
+      <span id="side-label">SIDE</span>
+      <img id="side-image" src="Images/sideAttacker.png" alt="Side icon">
+      <span id="side-text">ATTACKER</span>
+    </div>
+    <!-- squad -->
+    <div id="squad-container">
+      <label id="squad-label">SQUAD</label>
+      <select id="squad-select" style="display:none;">
+        <option value="REDHAMMER" data-img="Images/redhammer.png">REDHAMMER</option>
+        <option value="VIPERSTRIKE" data-img="Images/viperstrike.png">VIPERSTRIKE</option>
+        <option value="GHOSTEYES" data-img="Images/ghosteyes.png">GHOSTEYES</option>
+        <option value="WOLFGUARD" data-img="Images/wolfguard.png">WOLFGUARD</option>
+        <option value="NIGHTHAVEN" data-img="Images/nighthaven.png">NIGHTHAVEN</option>
+        <option value="KERES" data-img="Images/keres.png">KERES</option>
+      </select>
+      <img id="squad-image" src='' alt="Squad icon">
+      <span id="squad-text"></span>
+    </div>
+    <!-- specialty -->
+    <div id="specialty-container">
+      <label id="specialty-label">SPECIALTY</label>
+      <div class="specialty-divider"></div>
+      <div id="specialty-options" style="display:none;">
+        <label> <input type="checkbox" value="FRONT LINE"> FRONT LINE (atk)</label><br>
+        <label> <input type="checkbox" value="BREACH"> BREACH (atk)</label><br>
+        <label> <input type="checkbox" value="MAP CONTROL"> MAP CONTROL (atk)</label><br>
+        <label> <input type="checkbox" value="SUPPORT"> SUPPORT</label><br>
+        <label> <input type="checkbox" value="ANTI-GADGET"> ANTI-GADGET</label><br>
+        <label> <input type="checkbox" value="INTEL"> INTEL</label><br>
+        <label> <input type="checkbox" value="ANTI-ENTRY"> ANTI-ENTRY (def)</label><br>
+        <label> <input type="checkbox" value="TRAPPER"> TRAPPER (def)</label><br>
+        <label> <input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL (def)</label><br>
+      </div>
+      <p id="specialty-output" class="specialty-output"></p>
+    </div>
+    <!-- health speed -->
+    <div id="health-speed-container">
+      <div class="health-speed-item">
+        <span id="health-label">HEALTH</span>
+        <div class="health-speed-divider"></div>
+        <img id="health-image" src="Images/healthspeedPoints2.png" alt="Health points">
+      </div>
+      <div class="health-speed-item">
+        <span id="speed-label">SPEED</span>
+        <div class="health-speed-divider"></div>
+        <img id="speed-image" src="Images/healthspeedPoints2.png" alt="Speed points">
+      </div>
+    </div>
+  </div>
+
   <h1 class="title-loadout">LOADOUT</h1>
   <div class="triple-container">
     <div class="section-triple">
@@ -82,67 +139,7 @@
   <script src="weapons.js"></script>
   <script src="operatorLoadout.js"></script>
 
-  <div class="single-container">
-    <!-- codename -->
-    <div class="form-group">
-      <span id="codename" class="editable-text-codename" tabindex="0">CODENAME</span>
-    </div>
   
-    <!-- side -->
-    <div id="side-container">
-      <span id="side-label">SIDE</span>
-      <img id="side-image" src="Images/sideAttacker.png" alt="Side icon">
-      <span id="side-text">ATTACKER</span>
-    </div>
-  
-    <!-- squad -->
-    <div id="squad-container">
-      <label id="squad-label">SQUAD</label>
-      <select id="squad-select" style="display:none;">
-        <option value="REDHAMMER" data-img="Images/redhammer.png">REDHAMMER</option>
-        <option value="VIPERSTRIKE" data-img="Images/viperstrike.png">VIPERSTRIKE</option>
-        <option value="GHOSTEYES" data-img="Images/ghosteyes.png">GHOSTEYES</option>
-        <option value="WOLFGUARD" data-img="Images/wolfguard.png">WOLFGUARD</option>
-        <option value="NIGHTHAVEN" data-img="Images/nighthaven.png">NIGHTHAVEN</option>
-        <option value="KERES" data-img="Images/keres.png">KERES</option>
-      </select>
-      <img id="squad-image" src='' alt="Squad icon">
-      <span id="squad-text"></span>
-    </div>
-  
-    <!-- specialty -->
-    <div id="specialty-container">
-      <label id="specialty-label">SPECIALTY</label>
-      <div class="specialty-divider"></div>
-      <div id="specialty-options" style="display:none;">
-        <label> <input type="checkbox" value="FRONT LINE"> FRONT LINE (atk)</label><br>
-        <label> <input type="checkbox" value="BREACH"> BREACH (atk)</label><br>
-        <label> <input type="checkbox" value="MAP CONTROL"> MAP CONTROL (atk)</label><br>
-        <label> <input type="checkbox" value="SUPPORT"> SUPPORT</label><br>
-        <label> <input type="checkbox" value="ANTI-GADGET"> ANTI-GADGET</label><br>
-        <label> <input type="checkbox" value="INTEL"> INTEL</label><br>
-        <label> <input type="checkbox" value="ANTI-ENTRY"> ANTI-ENTRY (def)</label><br>
-        <label> <input type="checkbox" value="TRAPPER"> TRAPPER (def)</label><br>
-        <label> <input type="checkbox" value="CROWD CONTROL"> CROWD CONTROL (def)</label><br>
-      </div>
-      <p id="specialty-output" class="specialty-output"></p>
-    </div>
-  
-    <!-- health speed -->
-    <div id="health-speed-container">
-      <div class="health-speed-item">
-        <span id="health-label">HEALTH</span>
-        <div class="health-speed-divider"></div>
-        <img id="health-image" src="Images/healthspeedPoints2.png" alt="Health points">
-      </div>
-      <div class="health-speed-item">
-        <span id="speed-label">SPEED</span>
-        <div class="health-speed-divider"></div>
-        <img id="speed-image" src="Images/healthspeedPoints2.png" alt="Speed points">
-      </div>
-    </div>
-
-  </div>
 
   
   <script>
