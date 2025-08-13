@@ -277,4 +277,9 @@ h1 {
   font-weight: bold;
   color: #b0bac6;
   text-align: center;
+  border: 1px solid orange;
+}
+
+dev {
+  border: 1px solid lime;
 }
