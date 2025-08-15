@@ -169,7 +169,8 @@ select option.option-empty {
 .iconAndName-container{
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 0px;
+  margin: 30px;
 }
 
 .single-container {
