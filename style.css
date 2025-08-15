@@ -52,6 +52,10 @@ body {
   color: #b0bac6;
 }
 
+.title:hover {
+  color: #FFB12B;
+}
+
 .attack {
   background-color: #2196F3;
 }
@@ -221,7 +225,7 @@ select option.option-empty {
 #health-label:hover,
 #speed-label:hover {
   cursor: pointer;
-  color: #CC9500;
+  color: #FFB12B;
 }
 
 #codename,
@@ -248,7 +252,7 @@ select option.option-empty {
 }
 .editable-text-codename:hover {
   cursor: pointer;
-  color: #CC9500;
+  color: #FFB12B;
 }
 
 .specialty-divider {
