@@ -174,7 +174,7 @@ select option.option-empty {
   display: flex;
   align-items: center;
   gap: 0px;
-  margin: 30px;
+  margin: 0px;
 }
 
 .single-container {
