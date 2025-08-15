@@ -1,4 +1,21 @@
-// CODENAME
+  //ICON
+  const operatorIcon = document.getElementById('operatorIcon');
+  const fileInput = document.getElementById('fileInput');
+  operatorIcon.addEventListener('click', () => {
+     fileInput.click();
+  });
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        operatorIcon.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // CODENAME
   document.addEventListener('DOMContentLoaded', () => {
     const codenameSpan = document.getElementById('codename');
     codenameSpan.addEventListener('click', () => {
