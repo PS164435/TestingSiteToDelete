@@ -15,7 +15,7 @@
   <script>
     const operatorIcon = document.getElementById('operatorIcon');
     const fileInput = document.getElementById('fileInput');
-    preview.addEventListener('click', () => {
+    operatorIcon.addEventListener('click', () => {
       fileInput.click();
     });
     fileInput.addEventListener('change', () => {
@@ -23,7 +23,7 @@
       if (file) {
         const reader = new FileReader();
         reader.onload = e => {
-          preview.src = e.target.result;
+          operatorIcon.src = e.target.result;
         };
         reader.readAsDataURL(file);
       }
