@@ -166,6 +166,12 @@ select option.option-empty {
   outline: none;
 }
 
+.iconAndName-container{
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
 .single-container {
   display: grid;
   grid-template-columns: 1fr;
