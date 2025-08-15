@@ -29,6 +29,7 @@ const primaryWeapons = {
       { name: 'V308', value: 'Weapons/V308.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
+      { name: 'LVOA', value: 'Weapons/LVOA.png' },
     ],
   },
   "======== LIGHT MACHINE GUN ========": {
@@ -55,6 +56,7 @@ const primaryWeapons = {
       { name: 'SR-25', value: 'Weapons/SR-25.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
+      { name: 'DRAGUNOV SWD', value: 'Weapons/DRAGUNOV SWD.png' },
     ],
   },
   "======== SNIPER RIFLE ========": {
@@ -88,6 +90,7 @@ const primaryWeapons = {
       { name: 'VECTOR .45 ACP', value: 'Weapons/VECTOR .45 ACP.png' },
     ],
     " -- CUSTOM WEAPON -- ": [
+      { name: 'THOMPSON MK2', value: 'Weapons/THOMPSON MK2.png' },
     ],
   },
   "======== SLUG SHOTGUN ========": {
@@ -116,6 +119,8 @@ const primaryWeapons = {
       { name: 'SUPERNOVA', value: 'Weapons/SUPERNOVA.png' },
     ],
     " -- CUSTOM WEAPON -- ": [ 
+      { name: 'ESCORT BTS12', value: 'Weapons/ESCORT BTS12.png' },
+      { name: 'JACKHAMMER', value: 'Weapons/JACKHAMMER.png' },
     ],
   },
   "======== SHIELD ========": {
