@@ -9,6 +9,27 @@
 
   <p><a href="index.html">BACK9</a></p>
 
+  <img id="operatorIcon" src="defaultIcon.png" alt="Icon">
+  <input type="file" id="fileInput" accept="image/*" style="display: none;">
+  
+  <script>
+    const operatorIcon = document.getElementById('operatorIcon');
+    const fileInput = document.getElementById('fileInput');
+    preview.addEventListener('click', () => {
+      fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => {
+          preview.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
   <div class="single-container">
     <!-- codename -->
     <div class="form-group">
