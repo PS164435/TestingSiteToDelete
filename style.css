@@ -43,7 +43,8 @@ body {
   width: 25%;
 }
 
-.title {
+.title-loadout,
+.title-loadout-operator {
   font-size: 24px;
   display: inline-block;
   padding: 0px 0px;
@@ -52,7 +53,7 @@ body {
   color: #b0bac6;
 }
 
-.title:hover {
+.title-loadout:hover {
   color: #FFB12B;
 }
 
@@ -209,6 +210,11 @@ select option.option-empty {
   width: 100%;
 }
 
+#side-label-operator,
+#squad-label-operator,
+#specialty-label-operator,
+#health-label-operator,
+#speed-label-operator,
 #side-label,
 #squad-label,
 #specialty-label,
