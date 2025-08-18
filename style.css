@@ -17,6 +17,11 @@ body {
   display: block;
 }
 
+a#logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
 .dual-container {
   display: flex;
   justify-content: space-around;
