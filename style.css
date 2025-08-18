@@ -12,8 +12,9 @@ body {
 }
 
 #titleLogo {
-  max-width: 28%;
+  max-width: 20%;
   margin-left: 6%;
+  margin-top: 20px%;
   display: block;
 }
 
