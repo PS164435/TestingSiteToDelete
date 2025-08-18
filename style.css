@@ -11,6 +11,12 @@ body {
   max-width: 700px;
 }
 
+#titleLogo {
+  max-width: 28%;
+  margin-left: 6%;
+  display: block;
+}
+
 .dual-container {
   display: flex;
   justify-content: space-around;
