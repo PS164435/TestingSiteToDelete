@@ -12,15 +12,19 @@ body {
 }
 
 #titleLogo {
-  max-width: 20%;
-  margin-left: 6%;
-  margin-top: 20px%;
-  display: block;
+  width: 100%;
 }
 
 a#logo-link {
   display: inline-block;
   line-height: 0;
+}
+
+.logo-link{
+  width: 20%;
+  margin-left: 6%;
+  margin-top: 20px;
+  display: block;
 }
 
 .dual-container {
