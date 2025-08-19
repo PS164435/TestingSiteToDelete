@@ -323,9 +323,10 @@ h2 {
 
  #description {
   color: #b0bac6;
-  background: transparent;
   width: 76%;
   border: 1px solid #b0bac6;
   padding: 15px;
   box-sizing: border-box;
+  background-color: #090f19;
+  resize: none;
 }
