@@ -65,7 +65,6 @@ a#logo-link {
   display: inline-block;
   padding: 0px 0px;
   border-radius: 0px;
-  cursor: pointer;
   color: #b0bac6;
 }
 
@@ -142,8 +141,11 @@ a#logo-link {
   border: 1px solid #b0bac6;
   background-color: #090f19;
   object-fit: contain;
-  cursor: pointer;
   z-index: 1;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .loadout[src=""],
