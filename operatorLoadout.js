@@ -77,5 +77,5 @@ const loadoutData = {
       });
     });
   }
-  toggleSelect("h2.title", "nextElementSibling");
+  toggleSelect("h2.title-loadout", "nextElementSibling");
   toggleSelect(".loadout", "previousElementSibling");
