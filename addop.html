@@ -148,11 +148,11 @@
 
   <textarea id="description" placeholder="Description"></textarea>
   <script>
-    const note = document.getElementById("note");
-    note.value = localStorage.getItem("savedNote") || "";
-    note.addEventListener("input", () => {
-      localStorage.setItem("savedNote", note.value);
-    });
+    const note = document.getElementById("description");
+    textarea.addEventListener("input", () => {
+      textarea.style.height = "auto"; // reset wysokości
+      textarea.style.height = textarea.scrollHeight + "px"; // dopasuj do tekstu
+     });
   </script>
 
 </body>
