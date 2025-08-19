@@ -322,11 +322,10 @@ h2 {
 }
 
  #description {
-  color: red;
-  font-size: 11px;
+  color: #b0bac6;
   background: transparent;
-  width: 90%;
-  border: 1px solid #ccc;
-  padding: 5px;
+  width: 76%;
+  border: 1px solid #b0bac6;
+  padding: 15px;
   box-sizing: border-box;
 }
