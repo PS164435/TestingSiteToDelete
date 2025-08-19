@@ -148,7 +148,7 @@
 
   <textarea id="description" placeholder="Description"></textarea>
   <script>
-    const note = document.getElementById("description");
+    const textarea = document.getElementById("description");
     textarea.addEventListener("input", () => {
       textarea.style.height = "auto"; // reset wysokości
       textarea.style.height = textarea.scrollHeight + "px"; // dopasuj do tekstu
