@@ -146,5 +146,14 @@
   <script src="operatorLoadout.js"></script>
   <script src="operatorInfo.js"></script>
 
+  <textarea id="note" placeholder="Description"></textarea>
+  <script>
+    const note = document.getElementById("note");
+    note.value = localStorage.getItem("savedNote") || "";
+    note.addEventListener("input", () => {
+      localStorage.setItem("savedNote", note.value);
+    });
+  </script>
+
 </body>
 </html>
