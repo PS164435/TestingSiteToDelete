@@ -320,3 +320,13 @@ h2 {
   margin: 0px;
   font-weight: bold;
 }
+
+ #description {
+  color: red;
+  font-size: 11px;
+  background: transparent;
+  width: 90%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-sizing: border-box;
+}
