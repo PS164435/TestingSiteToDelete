@@ -190,6 +190,7 @@ select option.option-empty {
 
 .iconAndName-container{
   display: flex;
+  align-items: center;
   gap: 0px;
   margin: 0px;
 }
@@ -268,6 +269,7 @@ select option.option-empty {
   margin: 0px 11px;
 }
 
+.static-text, 
 .editable-text-codename {
   font-size: 48px;
   font-weight: bold;
