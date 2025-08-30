@@ -133,6 +133,13 @@ const primaryWeapons = {
 };
 
 const secondaryWeapons = {
+  "======== SLUG SHOTGUN ========": {
+    " -- DEFAULT WEAPON -- ": [
+      { name: 'GLAIVE-12', value: 'Weapons/GLAIVE-12.png' },
+    ],
+    " -- CUSTOM WEAPON -- ": [
+    ],
+  },
   "======== SHOTGUN ========": {
     " -- DEFAULT WEAPON -- ": [
       { name: 'ITA12S', value: 'Weapons/ITA12S.png' },
