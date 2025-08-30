@@ -330,4 +330,5 @@ h2 {
   background-color: #090f19;
   resize: none;
   font-size: 20px;
+  overflow: hidden;
 }
