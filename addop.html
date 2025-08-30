@@ -134,16 +134,9 @@
         <img class="loadout pointer" src="Empty.png" alt="">
       </div>
     </div>
-    <div class="iconAndName-container">
-      <img id="operatorIcon" class="pointer" src="Icons/defaultIcon.png" alt="Icon">
-      <input type="file" id="fileInput" accept="image/*" style="display: none;">
-      <span id="codename" class="editable-text-codename" tabindex="0">CODENAME</span>
-    </div>
-    <div class="section-triple">
-      <div class="grid-triple">
-        <img id="operatorIcon" class="pointer" src="Icons/defaultIcon.png" alt="Icon">
-        <input type="file" id="fileInput" accept="image/*" style="display: none;">
-      </div>
+    <div class="grid-triple">
+      <img class="weapon-select loadout pointer ability-icon" src="Icons/defaultIcon.png" alt="UniqueAbility">
+      <input type="file" class="ability-input" accept="image/*" style="display:none;">
     </div>
   </div>
 
@@ -158,6 +151,22 @@
       textarea.style.height = "auto"; // reset wysokości
       textarea.style.height = textarea.scrollHeight + "px"; // dopasuj do tekstu
      });
+
+    
+    document.querySelectorAll(".ability-icon").forEach((img, index) => {
+      const input = document.querySelectorAll(".ability-input")[index];
+      
+      img.addEventListener("click", () => input.click());
+      
+      input.addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = e => img.src = e.target.result;
+          reader.readAsDataURL(file);
+        }
+      });
+    });
   </script>
 
 </body>
