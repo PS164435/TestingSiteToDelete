@@ -146,9 +146,9 @@
   <script src="operatorLoadout.js"></script>
   <script src="operatorInfo.js"></script>
 
-  <textarea id="description" placeholder="Description"></textarea>
+  <textarea id="description_area" placeholder="Description_Area"></textarea>
   <script>
-    const textarea = document.getElementById("description");
+    const textarea = document.getElementById("description_area");
     textarea.addEventListener("input", () => {
       textarea.style.height = "auto"; // reset wysokości
       textarea.style.height = textarea.scrollHeight + "px"; // dopasuj do tekstu
