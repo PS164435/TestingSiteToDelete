@@ -166,9 +166,12 @@
       });
     });
 
-    const textarea = document.getElementById("description_area") || document.getElementById("biography_area");
+    document.querySelectorAll("#description_area, #biography_area").forEach(textarea => {
       textarea.addEventListener("input", () => {
-      textarea.style.height = "auto";
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+      });
+      // ustaw początkową wysokość na podstawie zawartości
       textarea.style.height = textarea.scrollHeight + "px";
     });
   </script>
