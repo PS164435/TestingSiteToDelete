@@ -67,6 +67,10 @@ a#logo-link {
   border-radius: 0px;
   color: #b0bac6;
 }
+.title-ability {
+  font-size: 16px;
+  margin: 20px 0px;
+}
 
 .title-loadout:hover {
   color: #FFB12B;
