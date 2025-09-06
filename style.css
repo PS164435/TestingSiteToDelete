@@ -326,7 +326,8 @@ h2 {
 }
 
  #description,
- #description_area {
+ #description_area,
+ #biography_area {
   color: #b0bac6;
   width: 76%;
   border: 1px solid #b0bac6;
