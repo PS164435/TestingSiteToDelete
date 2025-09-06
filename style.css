@@ -321,7 +321,8 @@ h2 {
   font-weight: bold;
 }
 
- #description {
+ #description,
+ #description_area {
   color: #b0bac6;
   width: 76%;
   border: 1px solid #b0bac6;
