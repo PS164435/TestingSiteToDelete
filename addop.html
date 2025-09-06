@@ -150,16 +150,12 @@
   <script>
     const textarea = document.getElementById("description_area");
     textarea.addEventListener("input", () => {
-      textarea.style.height = "auto"; // reset wysokości
-      textarea.style.height = textarea.scrollHeight + "px"; // dopasuj do tekstu
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
      });
-
-    
     document.querySelectorAll(".ability-icon").forEach((img, index) => {
       const input = document.querySelectorAll(".ability-input")[index];
-      
       img.addEventListener("click", () => input.click());
-      
       input.addEventListener("change", event => {
         const file = event.target.files[0];
         if (file) {
