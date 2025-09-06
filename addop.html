@@ -153,11 +153,6 @@
   <textarea id="biography_area" spellcheck="false" placeholder="Biography"></textarea>
 
   <script>
-    const textarea = document.getElementById("description_area" || "biography_area");
-    textarea.addEventListener("input", () => {
-      textarea.style.height = "auto";
-      textarea.style.height = textarea.scrollHeight + "px";
-     });
     document.querySelectorAll(".ability-icon").forEach((img, index) => {
       const input = document.querySelectorAll(".ability-input")[index];
       img.addEventListener("click", () => input.click());
@@ -169,6 +164,12 @@
           reader.readAsDataURL(file);
         }
       });
+    });
+
+    const textarea = document.getElementById("description_area") || document.getElementById("biography_area");
+      textarea.addEventListener("input", () => {
+      textarea.style.height = "auto";
+      textarea.style.height = textarea.scrollHeight + "px";
     });
   </script>
 
